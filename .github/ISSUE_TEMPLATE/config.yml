@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/anantanandgupta/mcp-servers/discussions
+    about: Ask questions or start a discussion here
+  - name: Security Issues
+    url: https://github.com/anantanandgupta/mcp-servers/security/advisories/new
+    about: Report security vulnerabilities privately
