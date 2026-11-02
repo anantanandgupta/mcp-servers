@@ -4,19 +4,19 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tools · MCP Servers</title>
-<meta name="description" content="All 34 tools exposed by GitHub Pro MCP, grouped by domain.">
+<meta name="description" content="What your agent can do with GitHub Pro MCP, grouped by task.">
 <link rel="canonical" href="https://mcp.anantanandgupta.net/github-pro-mcp/tools/">
 <meta name="theme-color" content="#4f46e5">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MCP Servers">
 <meta property="og:title" content="Tools">
-<meta property="og:description" content="All 34 tools exposed by GitHub Pro MCP, grouped by domain.">
+<meta property="og:description" content="What your agent can do with GitHub Pro MCP, grouped by task.">
 <meta property="og:url" content="https://mcp.anantanandgupta.net/github-pro-mcp/tools/">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tools">
-<meta name="twitter:description" content="All 34 tools exposed by GitHub Pro MCP, grouped by domain.">
+<meta name="twitter:description" content="What your agent can do with GitHub Pro MCP, grouped by task.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,183 +136,184 @@
   <main id="main">
 <div class="mx-auto max-w-6xl px-4 py-12">
   <p class="text-base font-semibold text-primary">Tools</p>
-  <h1 class="mt-2 text-4xl font-bold tracking-tight">34 tools across 8 domains</h1>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">34 tools for the tasks your agent actually does</h1>
   <p class="mt-4 max-w-2xl text-base-content/70">
-    Every tool maps to a GitHub REST or GraphQL operation. The server handles pagination,
-    retries and rate limits, so the agent only has to choose the right tool.
+    Grouped by the work, not the API. Each card shows an example prompt and the tools the
+    agent can choose from.
   </p>
 
-  <div class="mt-10 grid gap-4 md:grid-cols-2">
+  <div class="mt-10 space-y-4">
     
     <section class="card border border-base-300 bg-base-200">
       <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">User and repositories</h2>
-          <span class="badge badge-ghost badge-sm">8</span>
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-xl font-semibold">Triage and respond to issues</h2>
+          <span class="badge badge-ghost">9 tools</span>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">The authenticated user, public profiles, repository listing, search and file operations.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">auth_get_current_login</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">profile_get</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_repository</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">repository_search</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">code_search</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_get_content</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_create_update</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_delete</code></li>
-          
-        </ul>
+        <p class="text-base text-base-content/70">Read, search, create and update issues, comments and sub-issues.</p>
+        <div class="chat chat-start mt-2">
+          <div class="chat-bubble chat-bubble-primary text-base">Triage the open bugs in my repo and draft a response for each.</div>
+        </div>
+        <details class="collapse collapse-arrow mt-3 border border-base-300 bg-base-100">
+          <summary class="collapse-title text-base font-medium">Tools used</summary>
+          <div class="collapse-content">
+            <ul class="flex flex-wrap gap-2">
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_read</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_list</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_search</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_create</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_add_comment</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_update</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_close</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_reopen</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">sub_issue_write</code></li>
+              
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
     
     <section class="card border border-base-300 bg-base-200">
       <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Issues</h2>
-          <span class="badge badge-ghost badge-sm">11</span>
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-xl font-semibold">Review and merge pull requests</h2>
+          <span class="badge badge-ghost">3 tools</span>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">Read, search, create and update issues, comments, labels and sub-issue relationships.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_read</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_list</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_search</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_create</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_add_comment</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">sub_issue_write</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_close</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_reopen</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_update</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_add_label</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_remove_label</code></li>
-          
-        </ul>
+        <p class="text-base text-base-content/70">Read pull request details, commits and reviews, create a pull request, and merge it.</p>
+        <div class="chat chat-start mt-2">
+          <div class="chat-bubble chat-bubble-primary text-base">Review the open pull request, check the commits, and merge it if it is green.</div>
+        </div>
+        <details class="collapse collapse-arrow mt-3 border border-base-300 bg-base-100">
+          <summary class="collapse-title text-base font-medium">Tools used</summary>
+          <div class="collapse-content">
+            <ul class="flex flex-wrap gap-2">
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_read</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_create</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_merge</code></li>
+              
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
     
     <section class="card border border-base-300 bg-base-200">
       <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Issue fields</h2>
-          <span class="badge badge-ghost badge-sm">3</span>
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-xl font-semibold">Ship file changes</h2>
+          <span class="badge badge-ghost">3 tools</span>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">Organization-level fields such as Priority, Effort and dates.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_issue_field</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_get_field_value</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_set_field_value</code></li>
-          
-        </ul>
+        <p class="text-base text-base-content/70">Read, create, update and delete files in a repository.</p>
+        <div class="chat chat-start mt-2">
+          <div class="chat-bubble chat-bubble-primary text-base">Add a README section on a new branch and open a pull request for review.</div>
+        </div>
+        <details class="collapse collapse-arrow mt-3 border border-base-300 bg-base-100">
+          <summary class="collapse-title text-base font-medium">Tools used</summary>
+          <div class="collapse-content">
+            <ul class="flex flex-wrap gap-2">
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_get_content</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_create_update</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">file_delete</code></li>
+              
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
     
     <section class="card border border-base-300 bg-base-200">
       <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Pull requests</h2>
-          <span class="badge badge-ghost badge-sm">3</span>
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-xl font-semibold">Organize with labels, fields and projects</h2>
+          <span class="badge badge-ghost">10 tools</span>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">Read details, commits and reviews, create a pull request, and merge it.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_read</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_create</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">pull_request_merge</code></li>
-          
-        </ul>
+        <p class="text-base text-base-content/70">Apply labels, set Priority and Effort, and move items through Projects v2.</p>
+        <div class="chat chat-start mt-2">
+          <div class="chat-bubble chat-bubble-primary text-base">Label the new issues, set Priority and Effort, and add them to the current project.</div>
+        </div>
+        <details class="collapse collapse-arrow mt-3 border border-base-300 bg-base-100">
+          <summary class="collapse-title text-base font-medium">Tools used</summary>
+          <div class="collapse-content">
+            <ul class="flex flex-wrap gap-2">
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">label_list</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">label_write</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_add_label</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_remove_label</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_get_field_value</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">issue_set_field_value</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_issue_field</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_project</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">projects_get</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">projects_write</code></li>
+              
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
     
     <section class="card border border-base-300 bg-base-200">
       <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Organizations</h2>
-          <span class="badge badge-ghost badge-sm">3</span>
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <h2 class="text-xl font-semibold">Explore repositories and organizations</h2>
+          <span class="badge badge-ghost">9 tools</span>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">Search organizations, list a user&#39;s organizations, and list organization issue types.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">organization_search</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_organization</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_issue_type</code></li>
-          
-        </ul>
-      </div>
-    </section>
-    
-    <section class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Projects v2</h2>
-          <span class="badge badge-ghost badge-sm">3</span>
+        <p class="text-base text-base-content/70">Find repositories, search code, read profiles and list organizations.</p>
+        <div class="chat chat-start mt-2">
+          <div class="chat-bubble chat-bubble-primary text-base">Find the repositories I own and search them for a specific function.</div>
         </div>
-        <p class="text-base leading-relaxed text-base-content/70">List projects, read items and fields, and mutate items and field values.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_project</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">projects_get</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">projects_write</code></li>
-          
-        </ul>
-      </div>
-    </section>
-    
-    <section class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Labels</h2>
-          <span class="badge badge-ghost badge-sm">2</span>
-        </div>
-        <p class="text-base leading-relaxed text-base-content/70">List, create, update and delete repository labels.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">label_list</code></li>
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">label_write</code></li>
-          
-        </ul>
-      </div>
-    </section>
-    
-    <section class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <h2 class="card-title text-base">Server</h2>
-          <span class="badge badge-ghost badge-sm">1</span>
-        </div>
-        <p class="text-base leading-relaxed text-base-content/70">Runtime metadata for the server itself.</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
-          
-          <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">server_info</code></li>
-          
-        </ul>
+        <details class="collapse collapse-arrow mt-3 border border-base-300 bg-base-100">
+          <summary class="collapse-title text-base font-medium">Tools used</summary>
+          <div class="collapse-content">
+            <ul class="flex flex-wrap gap-2">
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">auth_get_current_login</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">profile_get</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_repository</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">repository_search</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">code_search</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">organization_search</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_organization</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">owner_list_issue_type</code></li>
+              
+              <li><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">server_info</code></li>
+              
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
     

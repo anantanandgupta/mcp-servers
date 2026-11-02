@@ -28,13 +28,6 @@ const PERMISSIONS = [
     note: "Read, create and merge pull requests.",
   },
   {
-    key: "administration",
-    label: "Administration",
-    group: "repository",
-    levels: ["read", "write"],
-    note: "Create and delete repositories. Test suite only.",
-  },
-  {
     key: "issue_fields",
     label: "Issue fields",
     group: "organization",
@@ -54,13 +47,6 @@ const PERMISSIONS = [
     group: "organization",
     levels: ["read", "write"],
     note: "Organization Projects v2.",
-  },
-  {
-    key: "members",
-    label: "Members",
-    group: "organization",
-    levels: ["read"],
-    note: "Optional. Not used by current tools.",
   },
 ];
 
@@ -82,17 +68,6 @@ const PRESETS = {
     issue_fields: "write",
     issue_types: "read",
     organization_projects: "write",
-  },
-  "test-suite": {
-    metadata: "read",
-    contents: "write",
-    issues: "write",
-    pull_requests: "write",
-    administration: "write",
-    issue_fields: "write",
-    issue_types: "read",
-    organization_projects: "write",
-    members: "read",
   },
 };
 

@@ -4,19 +4,19 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GitHub Pro MCP · MCP Servers</title>
-<meta name="description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<meta name="description" content="34 GitHub tools for issues, pull requests, files, projects and organizations. Install from npm or Docker, then connect your MCP host.">
 <link rel="canonical" href="https://mcp.anantanandgupta.net/github-pro-mcp/">
 <meta name="theme-color" content="#4f46e5">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MCP Servers">
 <meta property="og:title" content="GitHub Pro MCP">
-<meta property="og:description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<meta property="og:description" content="34 GitHub tools for issues, pull requests, files, projects and organizations. Install from npm or Docker, then connect your MCP host.">
 <meta property="og:url" content="https://mcp.anantanandgupta.net/github-pro-mcp/">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pro MCP">
-<meta name="twitter:description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<meta name="twitter:description" content="34 GitHub tools for issues, pull requests, files, projects and organizations. Install from npm or Docker, then connect your MCP host.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +141,7 @@
   "name": "GitHub Pro MCP",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Node.js 22+, Docker",
-  "description": "34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access.",
+  "description": "34 GitHub tools for issues, pull requests, files, projects and organizations.",
   "url": "https://mcp.anantanandgupta.net/github-pro-mcp/",
   "codeRepository": "https://github.com/anantanandgupta/mcp-servers",
   "author": {
@@ -157,7 +157,7 @@
     <div>
       <div class="badge badge-outline badge-primary gap-2">
         <span class="inline-block size-2 rounded-full bg-primary"></span>
-        34 tools · 8 domains · REST + GraphQL
+        34 tools · 5 task areas · any MCP host
       </div>
       <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
         GitHub, inside <span class="text-primary">your agent</span>.
@@ -165,7 +165,7 @@
       <p class="mt-5 max-w-xl text-lg leading-relaxed text-base-content/70">
         Give Claude Code, Cursor, Copilot and any MCP host a complete GitHub toolkit:
         issues, pull requests, repositories, projects, labels, organizations and file
-        operations, with retries and rate-limit handling built in.
+        operations, so your agent can do the work instead of describing it.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/github-pro-mcp/">Get started</a>
@@ -191,22 +191,22 @@
       <div class="stat">
         <div class="stat-title">Tools</div>
         <div class="stat-value text-primary">34</div>
-        <div class="stat-desc">Across 8 domains</div>
+        <div class="stat-desc">Across 5 task areas</div>
       </div>
       <div class="stat">
-        <div class="stat-title">APIs</div>
-        <div class="stat-value">2</div>
-        <div class="stat-desc">REST and GraphQL</div>
-      </div>
-      <div class="stat">
-        <div class="stat-title">Retries</div>
-        <div class="stat-value">3</div>
-        <div class="stat-desc">Backoff and jitter</div>
+        <div class="stat-title">Task areas</div>
+        <div class="stat-value">5</div>
+        <div class="stat-desc">Issues to projects</div>
       </div>
       <div class="stat">
         <div class="stat-title">Setup</div>
         <div class="stat-value">1</div>
         <div class="stat-desc">Personal access token</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Hosts</div>
+        <div class="stat-value">Any</div>
+        <div class="stat-desc">MCP-compatible</div>
       </div>
     </div>
   </div>
@@ -218,7 +218,7 @@
     <h2 class="mt-2 text-3xl font-bold tracking-tight">Built for real work, not demos.</h2>
     <p class="mt-3 text-base-content/70">
       Most GitHub MCP servers expose a thin wrapper around a handful of endpoints. This
-      one covers the full workflow, and handles the failure modes that show up in practice.
+      one covers the work your agent needs to finish.
     </p>
   </div>
 
@@ -227,15 +227,16 @@
       <div class="card-body">
         <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
-            <path d="m3 12 9 5 9-5"/>
-            <path d="m3 17 9 5 9-5"/>
+            <circle cx="18" cy="18" r="3"/>
+            <circle cx="6" cy="6" r="3"/>
+            <path d="M13 6h3a2 2 0 0 1 2 2v7"/>
+            <path d="M6 9v12"/>
           </svg>
         </div>
-        <h3 class="card-title text-base">Hybrid REST and GraphQL</h3>
+        <h3 class="card-title text-base">Issues and pull requests</h3>
         <p class="text-base leading-relaxed text-base-content/70">
-          REST for CRUD and search, GraphQL for cursor pagination and composite reads. One
-          server, the right API for each job.
+          Read, comment, label, review and merge. The agent can carry the whole review loop
+          without a second tool.
         </p>
       </div>
     </div>
@@ -244,16 +245,15 @@
       <div class="card-body">
         <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
-            <path d="M21 3v5h-5"/>
-            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
-            <path d="M3 21v-5h5"/>
+            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+            <path d="m10 13-2 2 2 2"/>
+            <path d="m14 17 2-2-2-2"/>
           </svg>
         </div>
-        <h3 class="card-title text-base">Resilient by default</h3>
+        <h3 class="card-title text-base">Files and code</h3>
         <p class="text-base leading-relaxed text-base-content/70">
-          Automatic retries with exponential backoff and jitter, a circuit breaker for
-          outages, and proactive rate-limit handling.
+          Read, create, update and delete files, and search code across repositories.
         </p>
       </div>
     </div>
@@ -262,14 +262,16 @@
       <div class="card-body">
         <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
-            <path d="m9 12 2 2 4-4"/>
+            <rect width="7" height="7" x="3" y="3" rx="1"/>
+            <rect width="7" height="7" x="14" y="3" rx="1"/>
+            <rect width="7" height="7" x="14" y="14" rx="1"/>
+            <rect width="7" height="7" x="3" y="14" rx="1"/>
           </svg>
         </div>
-        <h3 class="card-title text-base">Safety guardrails</h3>
+        <h3 class="card-title text-base">Projects and fields</h3>
         <p class="text-base leading-relaxed text-base-content/70">
-          Pin the server to one owner or repository so an agent cannot reach beyond the
-          scope you intended.
+          Set Priority and Effort, and move items through Projects v2 without leaving the
+          conversation.
         </p>
       </div>
     </div>
@@ -278,13 +280,15 @@
       <div class="card-body">
         <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h10"/>
+            <rect width="16" height="20" x="4" y="2" rx="2"/>
+            <path d="M9 22v-4h6v4"/>
+            <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
           </svg>
         </div>
-        <h3 class="card-title text-base">Readable logs</h3>
+        <h3 class="card-title text-base">Organizations and repositories</h3>
         <p class="text-base leading-relaxed text-base-content/70">
-          Multi-level stderr logging, from errors to debug traces, so a failing tool call
-          is easy to diagnose.
+          Find repositories, search code and list organizations, so the agent knows where
+          it is working.
         </p>
       </div>
     </div>

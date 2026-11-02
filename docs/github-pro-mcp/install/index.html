@@ -173,7 +173,7 @@
     "servers": {
       "github_pro": {
         "type": "local",
-        "command": ["node", "path/to/github-pro-mcp/dist/index.js"],
+        "command": ["npx", "-y", "github-pro-mcp"],
         "environment": {
           "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
         }
@@ -236,11 +236,6 @@
             <td><code>GITHUB_HOST</code></td>
             <td>No</td>
             <td>GitHub Enterprise Server API URL.</td>
-          </tr>
-          <tr>
-            <td><code>GITHUB_LOG_LEVEL</code></td>
-            <td>No</td>
-            <td><code>error</code>, <code>warn</code>, <code>info</code> or <code>debug</code>. Defaults to <code>error</code>.</td>
           </tr>
         </tbody>
       </table>
