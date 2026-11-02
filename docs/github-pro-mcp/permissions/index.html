@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Permissions · MCP Servers</title>
+<meta name="description" content="The fine-grained GitHub permissions each GitHub Pro MCP tool needs.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/github-pro-mcp/permissions/">
+<meta name="theme-color" content="#4f46e5">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:title" content="Permissions">
+<meta property="og:description" content="The fine-grained GitHub permissions each GitHub Pro MCP tool needs.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/github-pro-mcp/permissions/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Permissions">
+<meta name="twitter:description" content="The fine-grained GitHub permissions each GitHub Pro MCP tool needs.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+</head>
+<body class="min-h-screen bg-base-100 text-base-content antialiased">
+  <header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/github-pro-mcp/" class="text-sm font-semibold text-base-content/80">GitHub Pro MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/github-pro-mcp/" class="">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/install/" class="">Install</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/tools/" class="">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/permissions/" class="menu-active">Permissions</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/token/" class="">Create token</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  <main id="main">
+<div class="mx-auto max-w-6xl px-4 py-12">
+  <p class="text-sm font-semibold text-primary">Permissions</p>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">Permissions and the tools they unlock</h1>
+  <p class="mt-4 max-w-2xl text-base-content/70">
+    A fine-grained token only needs the permissions for the tools you actually plan to use.
+    The table below maps each permission to the tools that require it.
+  </p>
+
+  <div class="mt-8 overflow-x-auto">
+    <table class="table table-zebra table-sm">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Level</th>
+          <th>Tools</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td class="font-medium">Metadata</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">owner_list_repository, repository_search</td>
+          <td class="text-sm text-base-content/70">Prerequisite for every repository-scoped tool.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Contents</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">file_get_content, code_search</td>
+          <td class="text-sm text-base-content/70">Code search reads file contents.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Contents</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">file_create_update, file_delete, pull_request_merge</td>
+          <td class="text-sm text-base-content/70">Merging a pull request needs Contents write, not Pull requests write.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Issues</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">issue_read, issue_list, issue_search, label_list, issue_get_field_value</td>
+          <td class="text-sm text-base-content/70">Comments and labels can also be read with Pull requests read.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Issues</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">issue_create, issue_add_comment, issue_add_label, issue_remove_label, issue_update, issue_close, issue_reopen, sub_issue_write, label_write, issue_set_field_value</td>
+          <td class="text-sm text-base-content/70">Comments and labels can also be written with Pull requests write.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Pull requests</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">pull_request_read</td>
+          <td class="text-sm text-base-content/70">Also satisfied by Contents read.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Pull requests</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">pull_request_create</td>
+          <td class="text-sm text-base-content/70">Create a pull request from an existing branch.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Issue fields</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">owner_list_issue_field, issue_get_field_value, issue_set_field_value, issue_list (with include_fields or filter_fields), issue_read (with include_fields)</td>
+          <td class="text-sm text-base-content/70">Organization permission. Populates Priority, Effort and date values.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Issue fields</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">issue_set_field_value</td>
+          <td class="text-sm text-base-content/70">Organization permission. Sets or clears field values.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Issue types</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">owner_list_issue_type</td>
+          <td class="text-sm text-base-content/70">Organization permission.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Projects</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">owner_list_project, projects_get, issue_list (with include_project_fields or filter_fields)</td>
+          <td class="text-sm text-base-content/70">Organization Projects v2. Not the repository Projects permission.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Projects</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">projects_write</td>
+          <td class="text-sm text-base-content/70">Organization Projects v2. Adds items, updates field values and deletes items.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Administration</td>
+          <td class="whitespace-nowrap">write</td>
+          <td class="text-sm">none of the 34 tools</td>
+          <td class="text-sm text-base-content/70">Only the test suite needs this, to create and delete throwaway repositories.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">Members</td>
+          <td class="whitespace-nowrap">read</td>
+          <td class="text-sm">none</td>
+          <td class="text-sm text-base-content/70">Optional. No current tool requires it.</td>
+        </tr>
+        
+        <tr>
+          <td class="font-medium">No permission required</td>
+          <td class="whitespace-nowrap">-</td>
+          <td class="text-sm">auth_get_current_login, server_info, profile_get, owner_list_organization, organization_search</td>
+          <td class="text-sm text-base-content/70">Authenticated-user or public endpoints. Public search results are readable by any token.</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-8 alert alert-info">
+    <span>
+      The most common surprise: merging a pull request needs <strong>Contents: write</strong>,
+      not Pull requests: write. Granting only Pull requests write lets you create a pull request
+      but not merge it.
+    </span>
+  </div>
+
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold tracking-tight">A few rules worth knowing</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-base-content/80">
+      <li>Metadata read is required by every repository-scoped tool, even when you do not select it explicitly.</li>
+      <li>Issue comments and labels accept either Issues write or Pull requests write.</li>
+      <li>Pull request reads accept either Pull requests read or Contents read.</li>
+      <li>Writing files under <code class="rounded bg-base-300 px-1">.github/workflows/</code> also needs Workflows write.</li>
+      <li>Organization permissions only exist when the resource owner is an organization.</li>
+      <li>Public search results are readable by any token, which can make a token look broader than it is.</li>
+    </ul>
+  </section>
+
+  <div class="mt-8 flex flex-wrap gap-3">
+    <a class="btn btn-primary" href="/github-pro-mcp/token/">Create a token</a>
+    <a class="btn btn-outline" href="/github-pro-mcp/tools/">Browse tools</a>
+  </div>
+</div>
+</main>
+  <footer class="border-t border-base-300 bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-sm">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+      <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>

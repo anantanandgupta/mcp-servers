@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install · MCP Servers</title>
+<meta name="description" content="Install GitHub Pro MCP from npm or Docker, create a token, and connect opencode, Claude Desktop or Cursor.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/github-pro-mcp/install/">
+<meta name="theme-color" content="#4f46e5">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:title" content="Install">
+<meta property="og:description" content="Install GitHub Pro MCP from npm or Docker, create a token, and connect opencode, Claude Desktop or Cursor.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/github-pro-mcp/install/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install">
+<meta name="twitter:description" content="Install GitHub Pro MCP from npm or Docker, create a token, and connect opencode, Claude Desktop or Cursor.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+</head>
+<body class="min-h-screen bg-base-100 text-base-content antialiased">
+  <header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/github-pro-mcp/" class="text-sm font-semibold text-base-content/80">GitHub Pro MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/github-pro-mcp/" class="">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/install/" class="menu-active">Install</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/tools/" class="">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/permissions/" class="">Permissions</a>
+        </li>
+        
+        <li>
+          <a href="/github-pro-mcp/token/" class="">Create token</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  <main id="main">
+<div class="mx-auto max-w-4xl px-4 py-12">
+  <p class="text-sm font-semibold text-primary">Install</p>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">Install GitHub Pro MCP</h1>
+  <p class="mt-4 text-base-content/70">
+    The server runs locally and talks to the GitHub API with a personal access token you
+    create. Install it with npm or Docker, then point your MCP host at it.
+  </p>
+
+  <section class="mt-10 space-y-4">
+    <h2 class="text-2xl font-bold tracking-tight">1. Create a token</h2>
+    <p class="text-base-content/70">
+      Use the token generator to build a pre-filled GitHub page with the right permissions.
+      It only constructs the URL; the token is created on GitHub.
+    </p>
+    <a class="btn btn-primary" href="/github-pro-mcp/token/">Create a token</a>
+  </section>
+
+  <section class="mt-10 space-y-4">
+    <h2 class="text-2xl font-bold tracking-tight">2. Install the server</h2>
+    <h3 class="text-lg font-semibold">npm</h3>
+    <div class="mockup-code text-sm">
+      <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
+    </div>
+    <h3 class="text-lg font-semibold">Docker</h3>
+    <div class="mockup-code text-sm">
+      <pre data-prefix="$"><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
+    </div>
+  </section>
+
+  <section class="mt-10 space-y-4">
+    <h2 class="text-2xl font-bold tracking-tight">3. Connect your host</h2>
+
+    <h3 class="text-lg font-semibold">opencode</h3>
+    <div class="mockup-code text-sm">
+      <pre><code>{
+  "mcp": {
+    "servers": {
+      "github_pro": {
+        "type": "local",
+        "command": ["node", "path/to/github-pro-mcp/dist/index.js"],
+        "environment": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+        }
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <h3 class="text-lg font-semibold">Claude Desktop</h3>
+    <div class="mockup-code text-sm">
+      <pre><code>{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "github-pro-mcp"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_..."
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <h3 class="text-lg font-semibold">Cursor and VS Code</h3>
+    <p class="text-base-content/70">
+      Add the same server block to the host's MCP settings. Use the <code class="rounded bg-base-300 px-1">npx</code>
+      command for a zero-install setup, or point it at the global binary.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold tracking-tight">Environment variables</h2>
+    <div class="mt-4 overflow-x-auto">
+      <table class="table table-zebra table-sm">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>GITHUB_PERSONAL_ACCESS_TOKEN</code></td>
+            <td>Yes</td>
+            <td>Fine-grained or classic token with the permissions you need.</td>
+          </tr>
+          <tr>
+            <td><code>GITHUB_OWNER</code></td>
+            <td>No</td>
+            <td>Pin the server to one owner and reject mismatched calls.</td>
+          </tr>
+          <tr>
+            <td><code>GITHUB_REPO</code></td>
+            <td>No</td>
+            <td>Pin the server to one repository.</td>
+          </tr>
+          <tr>
+            <td><code>GITHUB_HOST</code></td>
+            <td>No</td>
+            <td>GitHub Enterprise Server API URL.</td>
+          </tr>
+          <tr>
+            <td><code>GITHUB_LOG_LEVEL</code></td>
+            <td>No</td>
+            <td><code>error</code>, <code>warn</code>, <code>info</code> or <code>debug</code>. Defaults to <code>error</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="mt-10 flex flex-wrap gap-3">
+    <a class="btn btn-primary" href="/github-pro-mcp/tools/">Browse the tools</a>
+    <a class="btn btn-outline" href="/github-pro-mcp/permissions/">Review permissions</a>
+  </div>
+</div>
+</main>
+  <footer class="border-t border-base-300 bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-sm">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+      <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>
