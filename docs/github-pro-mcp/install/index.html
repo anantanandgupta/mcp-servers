@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=5">
+<link rel="stylesheet" href="/assets/style.css?v=6">
 
 <script>
   (function () {
@@ -154,20 +154,54 @@
   <section class="mt-10 space-y-4">
     <h2 class="text-2xl font-bold tracking-tight">2. Install the server</h2>
     <h3 class="text-lg font-semibold">npm</h3>
-    <div class="mockup-code text-base">
-      <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
+    
+    <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">npm</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div></div>
+    <div class="code-scroll">
+      <pre><code>npm install -g github-pro-mcp</code></pre>
     </div>
+  </div>
+</div>
     <h3 class="text-lg font-semibold">Docker</h3>
-    <div class="mockup-code text-base">
-      <pre data-prefix="$"><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
+    
+    <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">docker</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div></div>
+    <div class="code-scroll">
+      <pre><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
     </div>
+  </div>
+</div>
   </section>
 
   <section class="mt-10 space-y-4">
     <h2 class="text-2xl font-bold tracking-tight">3. Connect your host</h2>
 
     <h3 class="text-lg font-semibold">opencode</h3>
-    <div class="mockup-code text-base">
+    
+    <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">opencode.jsonc</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div></div>
+    <div class="code-scroll">
       <pre><code>{
   "mcp": {
     "servers": {
@@ -182,9 +216,21 @@
   }
 }</code></pre>
     </div>
+  </div>
+</div>
 
     <h3 class="text-lg font-semibold">Claude Desktop</h3>
-    <div class="mockup-code text-base">
+    
+    <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">claude_desktop_config.json</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div></div>
+    <div class="code-scroll">
       <pre><code>{
   "mcpServers": {
     "github": {
@@ -197,6 +243,8 @@
   }
 }</code></pre>
     </div>
+  </div>
+</div>
 
     <h3 class="text-lg font-semibold">Cursor and VS Code</h3>
     <p class="text-base-content/70">

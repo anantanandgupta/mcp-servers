@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=5">
+<link rel="stylesheet" href="/assets/style.css?v=6">
 
 <script>
   (function () {
@@ -176,12 +176,24 @@
       </p>
     </div>
 
-    <div class="mockup-code w-full text-base shadow-xl">
-      <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
-      <pre data-prefix=">" class="text-base-content/60"><code>export GITHUB_PERSONAL_ACCESS_TOKEN=github_pat_...</code></pre>
-      <pre data-prefix=">" class="text-base-content/60"><code>github-pro-mcp</code></pre>
-      <pre data-prefix="›" class="text-success"><code>34 tools registered</code></pre>
+    
+    <div class="w-full shadow-xl"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+    <div class="code-scroll">
+      <pre><code>npm install -g github-pro-mcp
+export GITHUB_PERSONAL_ACCESS_TOKEN=github_pat_...
+github-pro-mcp
+34 tools registered</code></pre>
     </div>
+  </div>
+</div></div>
   </div>
 </section>
 
@@ -369,14 +381,36 @@
     </div>
 
     <div class="grid gap-4">
-      <div class="mockup-code text-base">
-        <pre data-prefix="#" class="text-base-content/50"><code>npm</code></pre>
-        <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
-      </div>
-      <div class="mockup-code text-base">
-        <pre data-prefix="#" class="text-base-content/50"><code>docker</code></pre>
-        <pre data-prefix="$"><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
-      </div>
+      
+      <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">npm</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div></div>
+    <div class="code-scroll">
+      <pre><code>npm install -g github-pro-mcp</code></pre>
+    </div>
+  </div>
+</div>
+      
+      <div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">docker</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div></div>
+    <div class="code-scroll">
+      <pre><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </section>
