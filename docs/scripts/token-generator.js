@@ -119,7 +119,7 @@ function renderPermissions() {
     section.dataset.group = group;
 
     const heading = document.createElement("h3");
-    heading.className = "mb-2 text-xs font-semibold uppercase tracking-wider text-base-content/50";
+    heading.className = "mb-2 text-sm font-semibold uppercase tracking-wider text-base-content/50";
     heading.textContent = group === "repository" ? "Repository permissions" : "Organization permissions";
     section.appendChild(heading);
 
@@ -142,10 +142,10 @@ function renderPermissions() {
 
       const text = document.createElement("span");
       const title = document.createElement("span");
-      title.className = "block text-sm font-medium";
+      title.className = "block text-base font-medium";
       title.textContent = permission.label;
       const note = document.createElement("span");
-      note.className = "block text-xs text-base-content/60";
+      note.className = "block text-sm text-base-content/60";
       note.textContent = permission.note;
       text.append(title, note);
 

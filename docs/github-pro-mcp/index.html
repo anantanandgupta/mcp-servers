@@ -19,7 +19,10 @@
 <meta name="twitter:description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 
 <script>
   (function () {
@@ -100,7 +103,7 @@
   
 <div class="border-b border-base-300 bg-base-100">
   <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
-    <a href="/github-pro-mcp/" class="text-sm font-semibold text-base-content/80">GitHub Pro MCP</a>
+    <a href="/github-pro-mcp/" class="text-base font-semibold text-base-content/80">GitHub Pro MCP</a>
     <nav aria-label="Section navigation" class="overflow-x-auto">
       <ul class="menu menu-horizontal gap-1 p-0">
         
@@ -168,12 +171,12 @@
         <a class="btn btn-primary" href="/github-pro-mcp/">Get started</a>
         <a class="btn btn-outline" href="/github-pro-mcp/token/">Create a token</a>
       </div>
-      <p class="mt-4 text-xs text-base-content/50">
+      <p class="mt-4 text-sm text-base-content/50">
         Free to install. No subscription. Your token stays on your machine.
       </p>
     </div>
 
-    <div class="mockup-code w-full text-sm shadow-xl">
+    <div class="mockup-code w-full text-base shadow-xl">
       <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
       <pre data-prefix=">" class="text-base-content/60"><code>export GITHUB_PERSONAL_ACCESS_TOKEN=github_pat_...</code></pre>
       <pre data-prefix=">" class="text-base-content/60"><code>github-pro-mcp</code></pre>
@@ -211,7 +214,7 @@
 
 <section class="mx-auto max-w-6xl px-4 py-16">
   <div class="max-w-2xl">
-    <p class="text-sm font-semibold text-primary">Why this server</p>
+    <p class="text-base font-semibold text-primary">Why this server</p>
     <h2 class="mt-2 text-3xl font-bold tracking-tight">Built for real work, not demos.</h2>
     <p class="mt-3 text-base-content/70">
       Most GitHub MCP servers expose a thin wrapper around a handful of endpoints. This
@@ -230,7 +233,7 @@
           </svg>
         </div>
         <h3 class="card-title text-base">Hybrid REST and GraphQL</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
+        <p class="text-base leading-relaxed text-base-content/70">
           REST for CRUD and search, GraphQL for cursor pagination and composite reads. One
           server, the right API for each job.
         </p>
@@ -248,7 +251,7 @@
           </svg>
         </div>
         <h3 class="card-title text-base">Resilient by default</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
+        <p class="text-base leading-relaxed text-base-content/70">
           Automatic retries with exponential backoff and jitter, a circuit breaker for
           outages, and proactive rate-limit handling.
         </p>
@@ -264,7 +267,7 @@
           </svg>
         </div>
         <h3 class="card-title text-base">Safety guardrails</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
+        <p class="text-base leading-relaxed text-base-content/70">
           Pin the server to one owner or repository so an agent cannot reach beyond the
           scope you intended.
         </p>
@@ -279,7 +282,7 @@
           </svg>
         </div>
         <h3 class="card-title text-base">Readable logs</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
+        <p class="text-base leading-relaxed text-base-content/70">
           Multi-level stderr logging, from errors to debug traces, so a failing tool call
           is easy to diagnose.
         </p>
@@ -291,7 +294,7 @@
 <section class="border-y border-base-300 bg-base-200/50">
   <div class="mx-auto max-w-6xl px-4 py-16">
     <div class="max-w-2xl">
-      <p class="text-sm font-semibold text-primary">What you can do</p>
+      <p class="text-base font-semibold text-primary">What you can do</p>
       <h2 class="mt-2 text-3xl font-bold tracking-tight">Start with a real task.</h2>
       <p class="mt-3 text-base-content/70">
         Ask in plain language. The agent picks the tools, and the server handles the API
@@ -303,7 +306,7 @@
       <div class="card border border-base-300 bg-base-100">
         <div class="card-body">
           <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
+            <div class="chat-bubble chat-bubble-primary text-base">
               Triage the open bugs in my repo, label them, and draft a response for each.
             </div>
           </div>
@@ -318,7 +321,7 @@
       <div class="card border border-base-300 bg-base-100">
         <div class="card-body">
           <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
+            <div class="chat-bubble chat-bubble-primary text-base">
               Review the open pull request, check the commits, and merge it if it is green.
             </div>
           </div>
@@ -332,7 +335,7 @@
       <div class="card border border-base-300 bg-base-100">
         <div class="card-body">
           <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
+            <div class="chat-bubble chat-bubble-primary text-base">
               Add a README section on a new branch and open a pull request for review.
             </div>
           </div>
@@ -349,7 +352,7 @@
 <section class="mx-auto max-w-6xl px-4 py-16">
   <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
     <div>
-      <p class="text-sm font-semibold text-primary">Install</p>
+      <p class="text-base font-semibold text-primary">Install</p>
       <h2 class="mt-2 text-3xl font-bold tracking-tight">Two commands, any host.</h2>
       <p class="mt-3 text-base-content/70">
         Run from npm or Docker, then point your MCP host at the server. The installation
@@ -362,11 +365,11 @@
     </div>
 
     <div class="grid gap-4">
-      <div class="mockup-code text-sm">
+      <div class="mockup-code text-base">
         <pre data-prefix="#" class="text-base-content/50"><code>npm</code></pre>
         <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
       </div>
-      <div class="mockup-code text-sm">
+      <div class="mockup-code text-base">
         <pre data-prefix="#" class="text-base-content/50"><code>docker</code></pre>
         <pre data-prefix="$"><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
       </div>
@@ -401,14 +404,14 @@
           </span>
           MCP Servers
         </a>
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
           Production-ready MCP servers for AI agents, built for real workflows.
         </p>
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
           
           <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
           
@@ -416,8 +419,8 @@
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
           <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub repository</a></li>
           <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm package</a></li>
           <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker image</a></li>
@@ -425,7 +428,7 @@
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
       <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
       <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
     </div>

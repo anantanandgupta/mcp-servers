@@ -19,7 +19,10 @@
 <meta name="twitter:description" content="The fine-grained GitHub permissions each GitHub Pro MCP tool needs.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 
 <script>
   (function () {
@@ -100,7 +103,7 @@
   
 <div class="border-b border-base-300 bg-base-100">
   <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
-    <a href="/github-pro-mcp/" class="text-sm font-semibold text-base-content/80">GitHub Pro MCP</a>
+    <a href="/github-pro-mcp/" class="text-base font-semibold text-base-content/80">GitHub Pro MCP</a>
     <nav aria-label="Section navigation" class="overflow-x-auto">
       <ul class="menu menu-horizontal gap-1 p-0">
         
@@ -132,7 +135,7 @@
 
   <main id="main">
 <div class="mx-auto max-w-6xl px-4 py-12">
-  <p class="text-sm font-semibold text-primary">Permissions</p>
+  <p class="text-base font-semibold text-primary">Permissions</p>
   <h1 class="mt-2 text-4xl font-bold tracking-tight">Permissions and the tools they unlock</h1>
   <p class="mt-4 max-w-2xl text-base-content/70">
     A fine-grained token only needs the permissions for the tools you actually plan to use.
@@ -154,106 +157,106 @@
         <tr>
           <td class="font-medium">Metadata</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">owner_list_repository, repository_search</td>
-          <td class="text-sm text-base-content/70">Prerequisite for every repository-scoped tool.</td>
+          <td class="text-base">owner_list_repository, repository_search</td>
+          <td class="text-base text-base-content/70">Prerequisite for every repository-scoped tool.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Contents</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">file_get_content, code_search</td>
-          <td class="text-sm text-base-content/70">Code search reads file contents.</td>
+          <td class="text-base">file_get_content, code_search</td>
+          <td class="text-base text-base-content/70">Code search reads file contents.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Contents</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">file_create_update, file_delete, pull_request_merge</td>
-          <td class="text-sm text-base-content/70">Merging a pull request needs Contents write, not Pull requests write.</td>
+          <td class="text-base">file_create_update, file_delete, pull_request_merge</td>
+          <td class="text-base text-base-content/70">Merging a pull request needs Contents write, not Pull requests write.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Issues</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">issue_read, issue_list, issue_search, label_list, issue_get_field_value</td>
-          <td class="text-sm text-base-content/70">Comments and labels can also be read with Pull requests read.</td>
+          <td class="text-base">issue_read, issue_list, issue_search, label_list, issue_get_field_value</td>
+          <td class="text-base text-base-content/70">Comments and labels can also be read with Pull requests read.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Issues</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">issue_create, issue_add_comment, issue_add_label, issue_remove_label, issue_update, issue_close, issue_reopen, sub_issue_write, label_write, issue_set_field_value</td>
-          <td class="text-sm text-base-content/70">Comments and labels can also be written with Pull requests write.</td>
+          <td class="text-base">issue_create, issue_add_comment, issue_add_label, issue_remove_label, issue_update, issue_close, issue_reopen, sub_issue_write, label_write, issue_set_field_value</td>
+          <td class="text-base text-base-content/70">Comments and labels can also be written with Pull requests write.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Pull requests</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">pull_request_read</td>
-          <td class="text-sm text-base-content/70">Also satisfied by Contents read.</td>
+          <td class="text-base">pull_request_read</td>
+          <td class="text-base text-base-content/70">Also satisfied by Contents read.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Pull requests</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">pull_request_create</td>
-          <td class="text-sm text-base-content/70">Create a pull request from an existing branch.</td>
+          <td class="text-base">pull_request_create</td>
+          <td class="text-base text-base-content/70">Create a pull request from an existing branch.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Issue fields</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">owner_list_issue_field, issue_get_field_value, issue_set_field_value, issue_list (with include_fields or filter_fields), issue_read (with include_fields)</td>
-          <td class="text-sm text-base-content/70">Organization permission. Populates Priority, Effort and date values.</td>
+          <td class="text-base">owner_list_issue_field, issue_get_field_value, issue_set_field_value, issue_list (with include_fields or filter_fields), issue_read (with include_fields)</td>
+          <td class="text-base text-base-content/70">Organization permission. Populates Priority, Effort and date values.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Issue fields</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">issue_set_field_value</td>
-          <td class="text-sm text-base-content/70">Organization permission. Sets or clears field values.</td>
+          <td class="text-base">issue_set_field_value</td>
+          <td class="text-base text-base-content/70">Organization permission. Sets or clears field values.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Issue types</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">owner_list_issue_type</td>
-          <td class="text-sm text-base-content/70">Organization permission.</td>
+          <td class="text-base">owner_list_issue_type</td>
+          <td class="text-base text-base-content/70">Organization permission.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Projects</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">owner_list_project, projects_get, issue_list (with include_project_fields or filter_fields)</td>
-          <td class="text-sm text-base-content/70">Organization Projects v2. Not the repository Projects permission.</td>
+          <td class="text-base">owner_list_project, projects_get, issue_list (with include_project_fields or filter_fields)</td>
+          <td class="text-base text-base-content/70">Organization Projects v2. Not the repository Projects permission.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Projects</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">projects_write</td>
-          <td class="text-sm text-base-content/70">Organization Projects v2. Adds items, updates field values and deletes items.</td>
+          <td class="text-base">projects_write</td>
+          <td class="text-base text-base-content/70">Organization Projects v2. Adds items, updates field values and deletes items.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Administration</td>
           <td class="whitespace-nowrap">write</td>
-          <td class="text-sm">none of the 34 tools</td>
-          <td class="text-sm text-base-content/70">Only the test suite needs this, to create and delete throwaway repositories.</td>
+          <td class="text-base">none of the 34 tools</td>
+          <td class="text-base text-base-content/70">Only the test suite needs this, to create and delete throwaway repositories.</td>
         </tr>
         
         <tr>
           <td class="font-medium">Members</td>
           <td class="whitespace-nowrap">read</td>
-          <td class="text-sm">none</td>
-          <td class="text-sm text-base-content/70">Optional. No current tool requires it.</td>
+          <td class="text-base">none</td>
+          <td class="text-base text-base-content/70">Optional. No current tool requires it.</td>
         </tr>
         
         <tr>
           <td class="font-medium">No permission required</td>
           <td class="whitespace-nowrap">-</td>
-          <td class="text-sm">auth_get_current_login, server_info, profile_get, owner_list_organization, organization_search</td>
-          <td class="text-sm text-base-content/70">Authenticated-user or public endpoints. Public search results are readable by any token.</td>
+          <td class="text-base">auth_get_current_login, server_info, profile_get, owner_list_organization, organization_search</td>
+          <td class="text-base text-base-content/70">Authenticated-user or public endpoints. Public search results are readable by any token.</td>
         </tr>
         
       </tbody>
@@ -300,14 +303,14 @@
           </span>
           MCP Servers
         </a>
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
           Production-ready MCP servers for AI agents, built for real workflows.
         </p>
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
           
           <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
           
@@ -315,8 +318,8 @@
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
           <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub repository</a></li>
           <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm package</a></li>
           <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker image</a></li>
@@ -324,7 +327,7 @@
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
       <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
       <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
     </div>

@@ -19,7 +19,10 @@
 <meta name="twitter:description" content="Build a pre-filled fine-grained GitHub personal access token for GitHub Pro MCP.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 
 <script>
   (function () {
@@ -100,7 +103,7 @@
   
 <div class="border-b border-base-300 bg-base-100">
   <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
-    <a href="/github-pro-mcp/" class="text-sm font-semibold text-base-content/80">GitHub Pro MCP</a>
+    <a href="/github-pro-mcp/" class="text-base font-semibold text-base-content/80">GitHub Pro MCP</a>
     <nav aria-label="Section navigation" class="overflow-x-auto">
       <ul class="menu menu-horizontal gap-1 p-0">
         
@@ -133,7 +136,7 @@
   <main id="main">
 <div class="mx-auto max-w-6xl px-4 py-12">
   <div class="max-w-2xl">
-    <p class="text-sm font-semibold text-primary">Token generator</p>
+    <p class="text-base font-semibold text-primary">Token generator</p>
     <h1 class="mt-2 text-4xl font-bold tracking-tight">Create a GitHub token</h1>
     <p class="mt-4 text-base-content/70">
       Build a pre-filled fine-grained token page. This page only constructs the GitHub URL;
@@ -151,9 +154,9 @@
             <input type="radio" name="owner-type" class="tab" aria-label="Personal" value="personal">
           </div>
           <label class="block">
-            <span class="mb-1 block text-sm font-medium">Owner name</span>
+            <span class="mb-1 block text-base font-medium">Owner name</span>
             <input id="owner-name" class="input input-bordered w-full" placeholder="my-org" autocomplete="off" spellcheck="false">
-            <span class="mt-1 block text-xs text-base-content/60">The organization or user that owns the repositories.</span>
+            <span class="mt-1 block text-sm text-base-content/60">The organization or user that owns the repositories.</span>
           </label>
         </div>
       </section>
@@ -162,15 +165,15 @@
         <div class="card-body space-y-4">
           <h2 class="card-title">2. Token details</h2>
           <label class="block">
-            <span class="mb-1 block text-sm font-medium">Token name</span>
+            <span class="mb-1 block text-base font-medium">Token name</span>
             <input id="token-name" class="input input-bordered w-full" value="github-pro-mcp" maxlength="40">
           </label>
           <label class="block">
-            <span class="mb-1 block text-sm font-medium">Description</span>
+            <span class="mb-1 block text-base font-medium">Description</span>
             <input id="token-description" class="input input-bordered w-full" value="github-pro-mcp token">
           </label>
           <label class="block">
-            <span class="mb-1 block text-sm font-medium">Expiration</span>
+            <span class="mb-1 block text-base font-medium">Expiration</span>
             <select id="expires-in" class="select select-bordered w-full">
               <option value="30">30 days</option>
               <option value="60">60 days</option>
@@ -181,7 +184,7 @@
             </select>
           </label>
           <label id="custom-expiry" class="hidden block">
-            <span class="mb-1 block text-sm font-medium">Custom days</span>
+            <span class="mb-1 block text-base font-medium">Custom days</span>
             <input id="expires-custom" type="number" min="1" max="366" class="input input-bordered w-full" value="90">
           </label>
         </div>
@@ -209,19 +212,19 @@
           <h2 class="card-title">Generated URL</h2>
           <label class="block">
             <span class="sr-only">Generated GitHub token URL</span>
-            <input id="token-url" class="input input-bordered w-full font-mono text-xs" readonly placeholder="Enter an owner to build the URL">
+            <input id="token-url" class="input input-bordered w-full font-mono text-sm" readonly placeholder="Enter an owner to build the URL">
           </label>
           <a id="open-token" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">Open GitHub</a>
           <button id="copy-url" class="btn btn-outline" type="button">Copy URL</button>
-          <p id="form-error" class="alert alert-error hidden text-sm" role="alert"></p>
-          <p class="text-xs text-base-content/60">GitHub shows the token once. Store it before closing the tab.</p>
+          <p id="form-error" class="alert alert-error hidden text-base" role="alert"></p>
+          <p class="text-sm text-base-content/60">GitHub shows the token once. Store it before closing the tab.</p>
         </div>
       </div>
 
       <div class="card border border-base-300 bg-base-200">
         <div class="card-body">
           <h2 class="card-title text-base">After creating the token</h2>
-          <ol class="list-decimal space-y-2 pl-4 text-sm text-base-content/70">
+          <ol class="list-decimal space-y-2 pl-4 text-base text-base-content/70">
             <li>Store it outside the repository, for example <code class="rounded bg-base-300 px-1">.secrets/github_pro_token</code>.</li>
             <li>Run <code class="rounded bg-base-300 px-1">chmod 600</code> on the file.</li>
             <li>Point your MCP host at the file, then restart it.</li>
@@ -249,14 +252,14 @@
           </span>
           MCP Servers
         </a>
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
           Production-ready MCP servers for AI agents, built for real workflows.
         </p>
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
           
           <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
           
@@ -264,8 +267,8 @@
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
-        <ul class="space-y-2 text-sm">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
           <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub repository</a></li>
           <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm package</a></li>
           <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker image</a></li>
@@ -273,7 +276,7 @@
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
       <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
       <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
     </div>
