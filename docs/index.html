@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub Pro MCP</title>
-<meta name="description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<title>MCP Servers</title>
+<meta name="description" content="Production-ready MCP servers for AI agents. Start with GitHub Pro MCP, 34 GitHub tools across 8 domains.">
 <link rel="canonical" href="https://mcp.anantanandgupta.net/">
 <meta name="theme-color" content="#4f46e5">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="GitHub Pro MCP">
-<meta property="og:title" content="GitHub Pro MCP">
-<meta property="og:description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:title" content="MCP Servers">
+<meta property="og:description" content="Production-ready MCP servers for AI agents. Start with GitHub Pro MCP, 34 GitHub tools across 8 domains.">
 <meta property="og:url" content="https://mcp.anantanandgupta.net/">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub Pro MCP">
-<meta name="twitter:description" content="34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access. Install from npm or Docker, then connect your MCP host.">
+<meta name="twitter:title" content="MCP Servers">
+<meta name="twitter:description" content="Production-ready MCP servers for AI agents. Start with GitHub Pro MCP, 34 GitHub tools across 8 domains.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
@@ -36,14 +36,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "GitHub Pro MCP",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Node.js 22+, Docker",
-  "description": "34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access.",
+  "@type": "WebSite",
+  "name": "MCP Servers",
   "url": "https://mcp.anantanandgupta.net/",
-  "codeRepository": "https://github.com/anantanandgupta/mcp-servers",
-  "author": {
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "publisher": {
     "@type": "Person",
     "name": "Anant Anand Gupta"
   }
@@ -56,15 +53,21 @@
   <div class="navbar mx-auto max-w-6xl gap-2 px-4">
     <div class="navbar-start">
       <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
-        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-content">GH</span>
-        <span class="hidden sm:inline">GitHub Pro MCP</span>
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
       </a>
     </div>
 
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal gap-1 px-1">
-        <li><a href="/github-pro-mcp/">Overview</a></li>
-        <li><a href="/github-pro-mcp/install/">Install</a></li>
+        <li><a href="/#servers">Servers</a></li>
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
         <li><a href="/github-pro-mcp/tools/">Tools</a></li>
         <li><a href="/github-pro-mcp/permissions/">Permissions</a></li>
       </ul>
@@ -90,8 +93,8 @@
           </svg>
         </button>
         <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
-          <li><a href="/github-pro-mcp/">Overview</a></li>
-          <li><a href="/github-pro-mcp/install/">Install</a></li>
+          <li><a href="/#servers">Servers</a></li>
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
           <li><a href="/github-pro-mcp/tools/">Tools</a></li>
           <li><a href="/github-pro-mcp/permissions/">Permissions</a></li>
           <li><a class="text-primary" href="/github-pro-mcp/token/">Create token</a></li>
@@ -104,240 +107,86 @@
   <main id="main">
 <section class="relative overflow-hidden border-b border-base-300">
   <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(52%_0.21_262/0.12),transparent)]"></div>
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
-    <div>
+  <div class="mx-auto max-w-6xl px-4 py-20 lg:py-28">
+    <div class="max-w-3xl">
       <div class="badge badge-outline badge-primary gap-2">
         <span class="inline-block size-2 rounded-full bg-primary"></span>
-        34 tools · 8 domains · REST + GraphQL
+        MCP servers for AI agents
       </div>
       <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-        GitHub, inside <span class="text-primary">your agent</span>.
+        Tools your agent can <span class="text-primary">actually use</span>.
       </h1>
-      <p class="mt-5 max-w-xl text-lg leading-relaxed text-base-content/70">
-        Give Claude Code, Cursor, Copilot and any MCP host a complete GitHub toolkit:
-        issues, pull requests, repositories, projects, labels, organizations and file
-        operations, with retries and rate-limit handling built in.
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-base-content/70">
+        A focused collection of MCP servers built for real workflows. Install one, connect
+        your host, and let your agent do the work instead of describing it.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/github-pro-mcp/">Get started</a>
-        <a class="btn btn-outline" href="/github-pro-mcp/token/">Create a token</a>
-      </div>
-      <p class="mt-4 text-xs text-base-content/50">
-        Free to install. No subscription. Your token stays on your machine.
-      </p>
-    </div>
-
-    <div class="mockup-code w-full text-sm shadow-xl">
-      <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
-      <pre data-prefix=">" class="text-base-content/60"><code>export GITHUB_PERSONAL_ACCESS_TOKEN=github_pat_...</code></pre>
-      <pre data-prefix=">" class="text-base-content/60"><code>github-pro-mcp</code></pre>
-      <pre data-prefix="›" class="text-success"><code>34 tools registered</code></pre>
-    </div>
-  </div>
-</section>
-
-<section class="border-b border-base-300 bg-base-200/50">
-  <div class="mx-auto max-w-6xl px-4 py-10">
-    <div class="stats stats-vertical w-full border border-base-300 bg-base-100 shadow-sm sm:stats-horizontal">
-      <div class="stat">
-        <div class="stat-title">Tools</div>
-        <div class="stat-value text-primary">34</div>
-        <div class="stat-desc">Across 8 domains</div>
-      </div>
-      <div class="stat">
-        <div class="stat-title">APIs</div>
-        <div class="stat-value">2</div>
-        <div class="stat-desc">REST and GraphQL</div>
-      </div>
-      <div class="stat">
-        <div class="stat-title">Retries</div>
-        <div class="stat-value">3</div>
-        <div class="stat-desc">Backoff and jitter</div>
-      </div>
-      <div class="stat">
-        <div class="stat-title">Setup</div>
-        <div class="stat-value">1</div>
-        <div class="stat-desc">Personal access token</div>
+        <a class="btn btn-primary" href="#servers">Browse servers</a>
+        <a class="btn btn-outline" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="mx-auto max-w-6xl px-4 py-16">
+<section id="servers" class="mx-auto max-w-6xl px-4 py-16">
   <div class="max-w-2xl">
-    <p class="text-sm font-semibold text-primary">Why this server</p>
-    <h2 class="mt-2 text-3xl font-bold tracking-tight">Built for real work, not demos.</h2>
+    <p class="text-sm font-semibold text-primary">Servers</p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight">Available now.</h2>
     <p class="mt-3 text-base-content/70">
-      Most GitHub MCP servers expose a thin wrapper around a handful of endpoints. This
-      one covers the full workflow, and handles the failure modes that show up in practice.
+      Each server installs from npm or Docker and works with any MCP host, including
+      Claude Code, Cursor, Codex CLI, Copilot and opencode.
     </p>
   </div>
 
-  <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-    <div class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
-            <path d="m3 12 9 5 9-5"/>
-            <path d="m3 17 9 5 9-5"/>
-          </svg>
+  <div class="mt-10 grid gap-4">
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-4 md:flex md:flex-row md:items-center md:justify-between">
+        <div class="max-w-2xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="badge badge-success badge-outline">stable</span>
+            <span class="text-xs text-base-content/50">34 tools · 8 domains</span>
+          </div>
+          <h3 class="mt-3 text-xl font-semibold">GitHub Pro MCP</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-content/70">34 GitHub tools across 8 domains, with hybrid REST and GraphQL access, automatic retries and rate-limit handling.</p>
         </div>
-        <h3 class="card-title text-base">Hybrid REST and GraphQL</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
-          REST for CRUD and search, GraphQL for cursor pagination and composite reads. One
-          server, the right API for each job.
-        </p>
-      </div>
-    </div>
-
-    <div class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
-            <path d="M21 3v5h-5"/>
-            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
-            <path d="M3 21v-5h5"/>
-          </svg>
+        <div class="flex flex-wrap gap-2">
+          <a class="btn btn-primary btn-sm" href="/github-pro-mcp/">Open docs</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.npmjs.com/package/github-pro-mcp">npm</a>
+          <a class="btn btn-ghost btn-sm" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker</a>
         </div>
-        <h3 class="card-title text-base">Resilient by default</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
-          Automatic retries with exponential backoff and jitter, a circuit breaker for
-          outages, and proactive rate-limit handling.
-        </p>
       </div>
-    </div>
-
-    <div class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
-        </div>
-        <h3 class="card-title text-base">Safety guardrails</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
-          Pin the server to one owner or repository so an agent cannot reach beyond the
-          scope you intended.
-        </p>
-      </div>
-    </div>
-
-    <div class="card border border-base-300 bg-base-200">
-      <div class="card-body">
-        <div class="mb-2 inline-flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h10"/>
-          </svg>
-        </div>
-        <h3 class="card-title text-base">Readable logs</h3>
-        <p class="text-sm leading-relaxed text-base-content/70">
-          Multi-level stderr logging, from errors to debug traces, so a failing tool call
-          is easy to diagnose.
-        </p>
-      </div>
-    </div>
+    </article>
+    
   </div>
 </section>
 
 <section class="border-y border-base-300 bg-base-200/50">
   <div class="mx-auto max-w-6xl px-4 py-16">
     <div class="max-w-2xl">
-      <p class="text-sm font-semibold text-primary">What you can do</p>
-      <h2 class="mt-2 text-3xl font-bold tracking-tight">Start with a real task.</h2>
-      <p class="mt-3 text-base-content/70">
-        Ask in plain language. The agent picks the tools, and the server handles the API
-        details.
-      </p>
+      <p class="text-sm font-semibold text-primary">How it works</p>
+      <h2 class="mt-2 text-3xl font-bold tracking-tight">Three steps to a working agent.</h2>
     </div>
-
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <div class="card border border-base-300 bg-base-100">
-        <div class="card-body">
-          <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
-              Triage the open bugs in my repo, label them, and draft a response for each.
-            </div>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="badge badge-ghost badge-sm">issue_list</span>
-            <span class="badge badge-ghost badge-sm">issue_add_label</span>
-            <span class="badge badge-ghost badge-sm">issue_add_comment</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card border border-base-300 bg-base-100">
-        <div class="card-body">
-          <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
-              Review the open pull request, check the commits, and merge it if it is green.
-            </div>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="badge badge-ghost badge-sm">pull_request_read</span>
-            <span class="badge badge-ghost badge-sm">pull_request_merge</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card border border-base-300 bg-base-100">
-        <div class="card-body">
-          <div class="chat chat-start">
-            <div class="chat-bubble chat-bubble-primary text-sm">
-              Add a README section on a new branch and open a pull request for review.
-            </div>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="badge badge-ghost badge-sm">file_create_update</span>
-            <span class="badge badge-ghost badge-sm">pull_request_create</span>
-          </div>
-        </div>
-      </div>
+    <ul class="steps steps-vertical mt-10 w-full lg:steps-horizontal">
+      <li class="step step-primary" data-content="1">Install the server</li>
+      <li class="step step-primary" data-content="2">Create a token</li>
+      <li class="step" data-content="3">Connect your host</li>
+    </ul>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="btn btn-primary" href="/github-pro-mcp/install/">Installation guide</a>
+      <a class="btn btn-outline" href="/github-pro-mcp/token/">Create a GitHub token</a>
     </div>
   </div>
 </section>
 
-<section class="mx-auto max-w-6xl px-4 py-16">
-  <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
-    <div>
-      <p class="text-sm font-semibold text-primary">Install</p>
-      <h2 class="mt-2 text-3xl font-bold tracking-tight">Two commands, any host.</h2>
-      <p class="mt-3 text-base-content/70">
-        Run from npm or Docker, then point your MCP host at the server. The installation
-        guide covers opencode, Claude Desktop, Cursor and VS Code.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/github-pro-mcp/install/">Installation guide</a>
-        <a class="btn btn-outline" href="/github-pro-mcp/token/">Create a token</a>
-      </div>
-    </div>
-
-    <div class="grid gap-4">
-      <div class="mockup-code text-sm">
-        <pre data-prefix="#" class="text-base-content/50"><code>npm</code></pre>
-        <pre data-prefix="$"><code>npm install -g github-pro-mcp</code></pre>
-      </div>
-      <div class="mockup-code text-sm">
-        <pre data-prefix="#" class="text-base-content/50"><code>docker</code></pre>
-        <pre data-prefix="$"><code>docker pull anantanandgupta/github-pro-mcp</code></pre>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="border-t border-base-300 bg-base-200/50">
-  <div class="mx-auto max-w-6xl px-4 py-20 text-center">
-    <h2 class="text-3xl font-bold tracking-tight">Ready to give your agent GitHub?</h2>
-    <p class="mx-auto mt-3 max-w-xl text-base-content/70">
-      Create a fine-grained token, install the server, and start with your first issue.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a class="btn btn-primary" href="/github-pro-mcp/token/">Create a token</a>
-      <a class="btn btn-ghost" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
-    </div>
+<section class="mx-auto max-w-6xl px-4 py-20 text-center">
+  <h2 class="text-3xl font-bold tracking-tight">Pick a server. Give your agent a new capability.</h2>
+  <p class="mx-auto mt-3 max-w-xl text-base-content/70">
+    Start with GitHub Pro MCP, then add more as they ship.
+  </p>
+  <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <a class="btn btn-primary" href="/github-pro-mcp/">GitHub Pro MCP</a>
+    <a class="btn btn-ghost" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
   </div>
 </section>
 </main>
@@ -346,19 +195,25 @@
     <div class="grid gap-10 md:grid-cols-4">
       <div class="md:col-span-2">
         <a href="/" class="flex items-center gap-2 font-semibold">
-          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-content">GH</span>
-          GitHub Pro MCP
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-base-content/70">
-          34 GitHub tools across 8 domains for AI agents, with hybrid REST and GraphQL access.
+          Production-ready MCP servers for AI agents, built for real workflows.
         </p>
         <p class="mt-4 text-xs text-base-content/50">
-          Proprietary. Free to install and use. See the LICENSE for terms.
+          © 2026 Anant Anand Gupta. All rights reserved.
         </p>
       </div>
 
       <div>
-        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">Product</h2>
+        <h2 class="mb-3 text-xs font-semibold uppercase tracking-wider text-base-content/50">GitHub Pro MCP</h2>
         <ul class="space-y-2 text-sm">
           <li><a class="link link-hover" href="/github-pro-mcp/">Overview</a></li>
           <li><a class="link link-hover" href="/github-pro-mcp/install/">Install</a></li>
@@ -379,7 +234,7 @@
     </div>
 
     <div class="mt-10 flex flex-col gap-2 border-t border-base-300 pt-6 text-xs text-base-content/60 sm:flex-row sm:items-center sm:justify-between">
-      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+      <p>MCP Servers by Anant Anand Gupta.</p>
       <p>Built with Eleventy, Tailwind CSS and daisyUI.</p>
     </div>
   </div>
