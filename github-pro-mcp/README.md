@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/github-pro-mcp)](https://www.npmjs.com/package/github-pro-mcp)
 [![Docker image](https://img.shields.io/docker/v/anantanandgupta/github-pro-mcp)](https://hub.docker.com/r/anantanandgupta/github-pro-mcp)
 
-An MCP (Model Context Protocol) server providing comprehensive GitHub API access via hybrid REST + GraphQL — **34 tools across 8 domains**.
+An MCP server that gives your agent a complete GitHub toolkit: **34 tools** for issues, pull requests, files, projects, labels and organizations.
 
 **Documentation and token generator:** https://mcp.anantanandgupta.net/
 
