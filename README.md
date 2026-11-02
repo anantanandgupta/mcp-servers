@@ -1,29 +1,47 @@
 # MCP Servers
 
-Production-ready MCP servers for AI agents, built by [Anant Anand Gupta](https://github.com/anantanandgupta).
+MCP servers that give your AI agent real tools, built by [Anant Anand Gupta](https://github.com/anantanandgupta).
 
-**Documentation, guides and the token generator:** https://mcp.anantanandgupta.net/
+**Documentation and token generator:** https://mcp.anantanandgupta.net/
 
-## Servers
+## GitHub Pro MCP
 
-| Server | What it does | Install |
-| --- | --- | --- |
-| [GitHub Pro MCP](./github-pro-mcp/README.md) | 34 GitHub tools across 8 domains. Hybrid REST and GraphQL, with retries, rate-limit handling and owner pinning. | `npm install -g github-pro-mcp` |
+Give Claude Code, Cursor, Copilot and any MCP host a complete GitHub toolkit: issues, pull requests, files, projects, labels and organizations.
 
-Each server ships as its own npm package and Docker image. The site is the guided path; the README in each server folder is the reference.
+- Triage issues, comment and label them.
+- Review pull requests, check commits and merge.
+- Read, create, update and delete files.
+- Set Priority and Effort, and move items through Projects v2.
+- Search repositories, code and organizations.
 
-## Website
+Install it globally:
 
-The site is published with GitHub Pages from the [`docs/`](./docs) folder:
+```bash
+npm install -g github-pro-mcp
+```
 
-- https://mcp.anantanandgupta.net/
+Or run it without installing:
 
-## Releases
+```bash
+npx -y github-pro-mcp
+```
 
-Releases are per server, because each server ships on its own schedule.
+For host configuration and the full tool list, see the [GitHub Pro MCP guide](./github-pro-mcp/README.md).
 
-- **GitHub Pro MCP:** `github-pro-mcp-vX.Y.Z` going forward. The earlier `v0.0.1` and `v0.0.2` releases are GitHub Pro MCP releases.
+## Quick start
+
+1. Create a fine-grained token with the generator: https://mcp.anantanandgupta.net/github-pro-mcp/token/
+2. Install the server with npm or Docker.
+3. Point your MCP host at it and restart the host.
+
+The token stays on your machine.
+
+## Links
+
+- **Documentation:** https://mcp.anantanandgupta.net/
+- **npm:** https://www.npmjs.com/package/github-pro-mcp
+- **Docker:** https://hub.docker.com/r/anantanandgupta/github-pro-mcp
 
 ## License
 
-Each server carries its own license. See the server folder for details.
+Proprietary. Free to install and use.

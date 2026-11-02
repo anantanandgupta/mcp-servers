@@ -10,9 +10,9 @@ An MCP (Model Context Protocol) server providing comprehensive GitHub API access
 ## Features
 
 - **34 Tools** — issues, pull requests, repositories, projects v2, labels, organizations, file operations, server info
-- **Hybrid API** — REST for CRUD/search, GraphQL for cursor pagination and composite queries
-- **Resilient by Default** — automatic retry with exponential backoff + jitter, circuit breaker for API outages, proactive rate limit management
-- **Structured Logging** — multi-level (error/warn/info/debug) stderr output
+- **Complete GitHub coverage** — issues, pull requests, files, projects, labels and organizations, without writing pagination or composite queries by hand
+- **Keeps working** — when GitHub is slow or rate-limited
+- **Clear errors** — when a call fails, so the agent can recover or ask
 - **Owner/Repo Pinning** — lock the server to a specific owner or repository as a safety guardrail
 
 ## Installation
@@ -85,7 +85,7 @@ Add to your `opencode.json`:
   "mcp": {
     "github_pro": {
       "type": "local",
-      "command": ["node", "path/to/github-pro-mcp/dist/index.js"],
+      "command": ["npx", "-y", "github-pro-mcp"],
       "environment": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
       }
