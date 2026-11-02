@@ -5,6 +5,8 @@
 
 An MCP (Model Context Protocol) server providing comprehensive GitHub API access via hybrid REST + GraphQL — **34 tools across 8 domains**.
 
+**Documentation and token generator:** https://mcp.anantanandgupta.net/
+
 ## Features
 
 - **34 Tools** — issues, pull requests, repositories, projects v2, labels, organizations, file operations, server info
