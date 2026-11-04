@@ -68,7 +68,7 @@
 
 
 </head>
-<body class="min-h-screen bg-base-100 text-base-content antialiased">
+<body class="flex min-h-screen flex-col bg-base-100 text-base-content antialiased">
   <div class="sticky top-0 z-40">
     <header class="border-b border-base-300 bg-base-100/85 backdrop-blur">
   <div class="navbar mx-auto max-w-6xl gap-2 px-4">
@@ -121,7 +121,7 @@
     
 
   </div>
-  <main id="main">
+  <main id="main" class="flex-1">
 <section class="relative overflow-hidden border-b border-base-300">
   <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(52%_0.21_262/0.12),transparent)]"></div>
   <div class="mx-auto max-w-6xl px-4 py-20 lg:py-28">
@@ -178,14 +178,16 @@
   </div>
 </section>
 
-<section class="mx-auto max-w-6xl px-4 py-20 text-center">
-  <h2 class="text-3xl font-bold tracking-tight">Pick a server. Give your agent a <span class="title-accent">new capability</span>.</h2>
-  <p class="mx-auto mt-3 max-w-xl text-base-content/70">
-    Start with GitHub Pro MCP, then add more as they ship.
-  </p>
-  <div class="mt-8 flex flex-wrap justify-center gap-3">
-    <a class="btn btn-primary" href="/github-pro-mcp/">GitHub Pro MCP</a>
-    <a class="btn btn-ghost" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
+<section class="border-t border-base-300 bg-base-200/50">
+  <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+    <h2 class="text-3xl font-bold tracking-tight">Pick a server. Give your agent a <span class="title-accent">new capability</span>.</h2>
+    <p class="mx-auto mt-3 max-w-xl text-base-content/70">
+      Start with GitHub Pro MCP, then add more as they ship.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a class="btn btn-primary" href="/github-pro-mcp/">GitHub Pro MCP</a>
+      <a class="btn btn-ghost" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
+    </div>
   </div>
 </section>
 </main>
