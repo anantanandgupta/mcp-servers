@@ -19,15 +19,24 @@
 <meta property="og:description" content="Build a pre-filled fine-grained GitHub personal access token for GitHub Pro MCP, with only the permissions the tools you use need.">
 <meta property="og:url" content="https://mcp.anantanandgupta.net/github-pro-mcp/token/">
 
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://mcp.anantanandgupta.net/github-pro-mcp/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GitHub Pro MCP card: GitHub, inside your agent, with the npm install terminal">
+
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GitHub Token Generator">
 <meta name="twitter:description" content="Build a pre-filled fine-grained GitHub personal access token for GitHub Pro MCP, with only the permissions the tools you use need.">
+<meta name="twitter:image" content="https://mcp.anantanandgupta.net/github-pro-mcp/og-image.png">
+<meta name="twitter:image:alt" content="GitHub Pro MCP card: GitHub, inside your agent, with the npm install terminal">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=6">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=7">
 
 <script>
   (function () {
@@ -194,7 +203,7 @@
 <div class="mx-auto max-w-6xl px-4 py-12">
   <div class="max-w-2xl">
     <p class="text-base font-semibold text-primary">Token generator</p>
-    <h1 class="mt-2 text-4xl font-bold tracking-tight">Create a GitHub token</h1>
+    <h1 class="mt-2 text-4xl font-bold tracking-tight">Create a <span class="title-accent">GitHub token</span></h1>
     <p class="mt-4 text-base-content/70">
       Build a pre-filled fine-grained token page. This page only constructs the GitHub URL;
       the token is created on GitHub and never touches this site.
@@ -281,9 +290,9 @@
         <div class="card-body">
           <h2 class="card-title text-base">After creating the token</h2>
           <ol class="list-decimal space-y-2 pl-4 text-base text-base-content/70">
-            <li>Store it outside the repository, for example <code class="rounded bg-base-300 px-1">.secrets/github_pro_token</code>.</li>
-            <li>Run <code class="rounded bg-base-300 px-1">chmod 600</code> on the file.</li>
-            <li>Point your MCP host at the file, then restart it.</li>
+            <li>Store it in a gitignored file at the project root, for example <code class="rounded bg-base-300 px-1">.secrets/github_pro_token</code>. Confirm <code class="rounded bg-base-300 px-1">.secrets/</code> is in <code class="rounded bg-base-300 px-1">.gitignore</code> before you paste the token.</li>
+            <li>Restrict the file with <code class="rounded bg-base-300 px-1">chmod 600</code>.</li>
+            <li>Set <code class="rounded bg-base-300 px-1">GITHUB_PERSONAL_ACCESS_TOKEN</code> in your MCP host, or reference the file if your host supports file interpolation, then restart the host.</li>
             <li>Verify with <code class="rounded bg-base-300 px-1">auth_get_current_login</code>.</li>
           </ol>
         </div>
