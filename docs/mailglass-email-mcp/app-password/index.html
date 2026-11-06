@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create a Gmail App Password for MailGlass | MCP Servers</title>
+<meta name="description" content="Step by step: enable 2-Step Verification, create a Gmail app password, enable IMAP, and store the credential where MailGlass can read it.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/mailglass-email-mcp/app-password/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Anant Anand Gupta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#4f46e5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Create a Gmail App Password for MailGlass">
+<meta property="og:description" content="Step by step: enable 2-Step Verification, create a Gmail app password, enable IMAP, and store the credential where MailGlass can read it.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/mailglass-email-mcp/app-password/">
+
+
+<meta property="og:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Create a Gmail App Password for MailGlass">
+<meta name="twitter:description" content="Step by step: enable 2-Step Verification, create a Gmail app password, enable IMAP, and store the credential where MailGlass can read it.">
+<meta name="twitter:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta name="twitter:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Create a Gmail App Password for MailGlass",
+  "description": "Step by step: enable 2-Step Verification, create a Gmail app password, enable IMAP, and store the credential where MailGlass can read it.",
+  "url": "https://mcp.anantanandgupta.net/mailglass-email-mcp/app-password/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MCP Servers",
+    "url": "https://mcp.anantanandgupta.net/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MCP Servers",
+      "item": "https://mcp.anantanandgupta.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MailGlass Email MCP",
+      "item": "https://mcp.anantanandgupta.net/github-pro-mcp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Create an app password",
+      "item": "https://mcp.anantanandgupta.net/mailglass-email-mcp/app-password/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="flex min-h-screen flex-col bg-base-100 text-base-content antialiased">
+  <div class="sticky top-0 z-40">
+    <header class="border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        
+        <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/mailglass-email-mcp/" class="text-base font-semibold text-base-content/80">MailGlass Email MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/mailglass-email-mcp/" class="">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/install/" class="">Install</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/tools/" class="">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/configuration/" class="">Configuration</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  </div>
+  <main id="main" class="flex flex-1 flex-col">
+<div class="mx-auto w-full max-w-4xl px-4 py-12">
+  <p class="text-base font-semibold text-primary">Credentials</p>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">Create a Gmail <span class="title-accent">app password</span>.</h1>
+  <p class="mt-3 text-base-content/70">
+    MailGlass never asks for your Google account password. It needs an app password: a
+    16-character credential you can revoke at any time without changing your real password.
+  </p>
+
+  <div class="card border-warning/40 bg-base-200 mt-8">
+  <div class="card-body">
+    <h2 class="card-title text-base">Before you start</h2>
+    <div class="space-y-2 text-sm leading-relaxed text-base-content/70">
+    <p>
+      App passwords do not exist until <strong>2-Step Verification</strong> is turned on. If you
+      have never set it up, do that first or the app password page will simply refuse.
+    </p>
+  </div>
+  </div>
+</div>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Step 1. Sign in as the <span class="title-accent">right account</span></h2>
+  <p class="mt-3 text-base-content/70">
+    The app password page always issues a credential for whoever is currently signed in. If you
+    manage more than one Google account, use a private window or the account switcher, or you
+    will create a password for the wrong mailbox.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Step 2. Turn on <span class="title-accent">2-Step Verification</span></h2>
+  <p class="mt-3 text-base-content/70">
+    Open <a class="link link-primary" href="https://myaccount.google.com/signinoptions/twosv">myaccount.google.com/signinoptions/twosv</a>
+    and complete the setup. Any second factor works: an authenticator app, a phone prompt, or a
+    security key.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Step 3. Create the <span class="title-accent">app password</span></h2>
+  <ol class="mt-3 list-decimal space-y-2 pl-5 text-base-content/70">
+    <li>Open <a class="link link-primary" href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>.</li>
+    <li>Enter a name, for example <strong>MailGlass</strong>.</li>
+    <li>Click <strong>Create</strong>.</li>
+    <li>Copy the 16-character value. Google shows it once and never again.</li>
+  </ol>
+
+  <div class="card border-base-300 bg-base-200 mt-6">
+  <div class="card-body">
+    <h2 class="card-title text-base">Spaces are cosmetic</h2>
+    <div class="space-y-2 text-sm leading-relaxed text-base-content/70">
+    <p>
+      Google displays the password as four groups, like <code>abcd efgh ijkl mnop</code>. The
+      spaces are presentation only: the credential is the 16 letters. MailGlass strips whitespace
+      for you either way.
+    </p>
+  </div>
+  </div>
+</div>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Step 4. Enable <span class="title-accent">IMAP</span></h2>
+  <p class="mt-3 text-base-content/70">
+    In Gmail, open <strong>Settings, See all settings, Forwarding and POP/IMAP</strong> and choose
+    <strong>Enable IMAP</strong>, then save. Without this the password authenticates but the
+    mailbox cannot be opened.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Step 5. Store it where <span class="title-accent">MailGlass can read it</span></h2>
+  <p class="mt-3 text-base-content/70">
+    MailGlass never creates or writes the secret file. Save the value yourself and restrict it:
+  </p>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div></div>
+    <div class="code-scroll">
+      <pre><code>mkdir -p ~/.secrets
+printf '%s' 'abcdefghijklmnop' &gt; ~/.secrets/gmail_app_password
+chmod 600 ~/.secrets/gmail_app_password</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-base-content/70">Then reference it from the config file:</p>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">config.json</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div></div>
+    <div class="code-scroll">
+      <pre><code>{
+  "accounts": [
+    {
+      "id": "work",
+      "provider": "gmail",
+      "email": "you@gmail.com",
+      "auth": { "password": { "file": "~/.secrets/gmail_app_password" } }
+    }
+  ]
+}</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-sm text-base-content/60">
+    You can also use <code>{ "env": "GMAIL_APP_PASSWORD" }</code> and pass the value through the
+    environment, which is easier in Docker.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight"><span class="title-accent">Verify</span></h2>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div></div>
+    <div class="code-scroll">
+      <pre><code>mailglass --check</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-sm text-base-content/70">
+    Exit <code>0</code> means the credential works. Exit <code>2</code> means Google rejected it.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">If the app password page is <span class="title-accent">unavailable</span></h2>
+  <div class="card mt-4 overflow-hidden border border-base-300 bg-base-200">
+    <div class="card-body p-0">
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead><tr><th>Cause</th><th>Fix</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>2-Step Verification is off</td>
+              <td>Most common. Complete step 2 first.</td>
+            </tr>
+            <tr>
+              <td>2SV uses security keys only</td>
+              <td>Add an authenticator app or phone prompt; app passwords stay hidden otherwise.</td>
+            </tr>
+            <tr>
+              <td>Advanced Protection Program is on</td>
+              <td>App passwords are unavailable by design.</td>
+            </tr>
+            <tr>
+              <td>Google Workspace account</td>
+              <td>An admin may have disabled app passwords. Only the admin can re-enable them.</td>
+            </tr>
+            <tr>
+              <td>Family Link or school account</td>
+              <td>Not supported by Google for app passwords.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">If authentication <span class="title-accent">still fails</span></h2>
+  <ul class="mt-3 list-disc space-y-2 pl-5 text-base-content/70">
+    <li><strong>Spaces</strong>: paste the 16 letters, not the grouped display.</li>
+    <li><strong>Trailing newline</strong>: use <code>printf</code> rather than <code>echo</code> when writing the file.</li>
+    <li><strong>Revoked</strong>: a password deleted in your Google account fails immediately. Create a new one.</li>
+    <li><strong>Wrong account</strong>: the most common cause of "invalid credentials" for people with several mailboxes.</li>
+  </ul>
+
+  <div class="card border-warning/40 bg-base-200 mt-12">
+  <div class="card-body">
+    <h2 class="card-title text-base">Treat it like a password</h2>
+    <div class="space-y-2 text-sm leading-relaxed text-base-content/70">
+    <p>
+      An app password grants full IMAP access to the mailbox, including write access. MailGlass
+      only ever reads, but the credential itself is not scoped. Use one password per client and
+      revoke it at
+      <a class="link link-primary" href="https://myaccount.google.com/security">myaccount.google.com/security</a>
+      when you stop using the tool.
+    </p>
+  </div>
+  </div>
+</div>
+</div>
+</main>
+  <footer class="bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a class="link link-hover" href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub Repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm Package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker Image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:justify-center">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MailGlass Email MCP: Read-Only Email Tools for AI Agents | MCP Servers</title>
+<meta name="description" content="MailGlass gives Claude Code, Cursor and any MCP host 8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/mailglass-email-mcp/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Anant Anand Gupta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#4f46e5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="MailGlass Email MCP: Read-Only Email Tools for AI Agents">
+<meta property="og:description" content="MailGlass gives Claude Code, Cursor and any MCP host 8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/mailglass-email-mcp/">
+
+
+<meta property="og:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MailGlass Email MCP: Read-Only Email Tools for AI Agents">
+<meta name="twitter:description" content="MailGlass gives Claude Code, Cursor and any MCP host 8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.">
+<meta name="twitter:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta name="twitter:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MailGlass Email MCP: Read-Only Email Tools for AI Agents",
+  "description": "MailGlass gives Claude Code, Cursor and any MCP host 8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.",
+  "url": "https://mcp.anantanandgupta.net/mailglass-email-mcp/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MCP Servers",
+    "url": "https://mcp.anantanandgupta.net/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MCP Servers",
+      "item": "https://mcp.anantanandgupta.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MailGlass Email MCP",
+      "item": "https://mcp.anantanandgupta.net/github-pro-mcp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "MailGlass Email MCP",
+      "item": "https://mcp.anantanandgupta.net/mailglass-email-mcp/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="flex min-h-screen flex-col bg-base-100 text-base-content antialiased">
+  <div class="sticky top-0 z-40">
+    <header class="border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        
+        <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/mailglass-email-mcp/" class="text-base font-semibold text-base-content/80">MailGlass Email MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/mailglass-email-mcp/" class="menu-active">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/install/" class="">Install</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/tools/" class="">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/configuration/" class="">Configuration</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  </div>
+  <main id="main" class="flex flex-1 flex-col">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MailGlass Email MCP",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Node.js 22.13+, Docker",
+  "description": "8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.",
+  "url": "https://mcp.anantanandgupta.net/mailglass-email-mcp/",
+  "sameAs": ["https://github.com/anantanandgupta/mcp-servers"],
+  "author": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+<section class="relative isolate overflow-hidden border-b border-base-300">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(52%_0.21_262/0.12),transparent)]"></div>
+  <div class="hero-network pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+  <svg class="h-full w-full" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor">
+    <g stroke-width="1.2">
+      <line x1="65" y1="52" x2="291" y2="43" />
+      <line x1="65" y1="52" x2="108" y2="319" />
+      <line x1="291" y1="43" x2="455" y2="75" />
+      <line x1="291" y1="43" x2="281" y2="259" />
+      <line x1="455" y1="75" x2="568" y2="91" />
+      <line x1="455" y1="75" x2="517" y2="220" />
+      <line x1="568" y1="91" x2="517" y2="220" />
+      <line x1="745" y1="83" x2="930" y2="45" />
+      <line x1="745" y1="83" x2="680" y2="247" />
+      <line x1="745" y1="83" x2="760" y2="228" />
+      <line x1="930" y1="45" x2="1159" y2="126" />
+      <line x1="1159" y1="126" x2="1297" y2="60" />
+      <line x1="1159" y1="126" x2="1125" y2="279" />
+      <line x1="1297" y1="60" x2="1369" y2="256" />
+      <line x1="108" y1="319" x2="281" y2="259" />
+      <line x1="108" y1="319" x2="97" y2="402" />
+      <line x1="108" y1="319" x2="208" y2="418" />
+      <line x1="281" y1="259" x2="208" y2="418" />
+      <line x1="517" y1="220" x2="680" y2="247" />
+      <line x1="680" y1="247" x2="760" y2="228" />
+      <line x1="963" y1="305" x2="1125" y2="279" />
+      <line x1="963" y1="305" x2="803" y2="428" />
+      <line x1="963" y1="305" x2="1031" y2="472" />
+      <line x1="1369" y1="256" x2="1354" y2="491" />
+      <line x1="97" y1="402" x2="208" y2="418" />
+      <line x1="97" y1="402" x2="122" y2="607" />
+      <line x1="208" y1="418" x2="122" y2="607" />
+      <line x1="475" y1="442" x2="604" y2="459" />
+      <line x1="475" y1="442" x2="337" y2="588" />
+      <line x1="604" y1="459" x2="803" y2="428" />
+      <line x1="604" y1="459" x2="581" y2="629" />
+      <line x1="803" y1="428" x2="745" y2="649" />
+      <line x1="1031" y1="472" x2="1134" y2="458" />
+      <line x1="1031" y1="472" x2="1027" y2="638" />
+      <line x1="1134" y1="458" x2="1223" y2="610" />
+      <line x1="1354" y1="491" x2="1223" y2="610" />
+      <line x1="1354" y1="491" x2="1377" y2="640" />
+      <line x1="337" y1="588" x2="439" y2="658" />
+      <line x1="439" y1="658" x2="581" y2="629" />
+      <line x1="581" y1="629" x2="745" y2="649" />
+      <line x1="1027" y1="638" x2="1223" y2="610" />
+      <line x1="1223" y1="610" x2="1377" y2="640" />
+    </g>
+    <g fill="currentColor" stroke="none">
+      <circle cx="65" cy="52" r="2.6" />
+      <circle cx="65" cy="52" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55" />
+      <circle cx="291" cy="43" r="1.8" />
+      <circle cx="455" cy="75" r="1.8" />
+      <circle cx="568" cy="91" r="1.8" />
+      <circle cx="745" cy="83" r="1.8" />
+      <circle cx="930" cy="45" r="1.8" />
+      <circle cx="1159" cy="126" r="1.8" />
+      <circle cx="1297" cy="60" r="2.6" />
+      <circle cx="108" cy="319" r="1.8" />
+      <circle cx="281" cy="259" r="1.8" />
+      <circle cx="517" cy="220" r="1.8" />
+      <circle cx="680" cy="247" r="1.8" />
+      <circle cx="680" cy="247" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55" />
+      <circle cx="760" cy="228" r="1.8" />
+      <circle cx="963" cy="305" r="1.8" />
+      <circle cx="1125" cy="279" r="2.6" />
+      <circle cx="1369" cy="256" r="1.8" />
+      <circle cx="97" cy="402" r="1.8" />
+      <circle cx="208" cy="418" r="1.8" />
+      <circle cx="475" cy="442" r="1.8" />
+      <circle cx="604" cy="459" r="1.8" />
+      <circle cx="803" cy="428" r="1.8" />
+      <circle cx="1031" cy="472" r="2.6" />
+      <circle cx="1134" cy="458" r="1.8" />
+      <circle cx="1134" cy="458" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55" />
+      <circle cx="1354" cy="491" r="1.8" />
+      <circle cx="122" cy="607" r="1.8" />
+      <circle cx="337" cy="588" r="1.8" />
+      <circle cx="439" cy="658" r="1.8" />
+      <circle cx="581" cy="629" r="1.8" />
+      <circle cx="745" cy="649" r="2.6" />
+      <circle cx="1027" cy="638" r="1.8" />
+      <circle cx="1223" cy="610" r="1.8" />
+      <circle cx="1377" cy="640" r="1.8" />
+    </g>
+  </svg>
+</div>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-36">
+    <div>
+      <div class="badge badge-outline badge-primary gap-2">
+        <span class="inline-block size-2 rounded-full bg-primary"></span>
+        <span>8 tools</span>
+        <span class="inline-block size-1 rounded-full bg-current opacity-40"></span>
+        <span>Gmail + generic IMAP</span>
+        <span class="inline-block size-1 rounded-full bg-current opacity-40"></span>
+        <span>read-only</span>
+      </div>
+      <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        Your mailbox, inside <span class="title-accent">your agent</span>.
+      </h1>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-base-content/70">
+        Search, read, follow threads and pull attachments from Gmail or any IMAP server, without giving the agent the ability to send, delete or move anything.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/mailglass-email-mcp/install/">Install</a>
+        <a class="btn btn-outline" href="/mailglass-email-mcp/tools/">See the tools</a>
+      </div>
+      <p class="mt-4 text-sm text-base-content/50">
+        Read-only by construction. Your credentials and your mail stay on your machine.
+      </p>
+    </div>
+
+    
+    <div class="w-full shadow-xl"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div>
+    <div class="code-scroll">
+      <pre><code>npm install -g mailglass-email-mcp
+mailglass --check
+✓ dev (gmail)  a***@gmail.com
+✓ connect + auth
+8 tools registered</code></pre>
+    </div>
+  </div>
+</div></div>
+  </div>
+</section>
+
+<section class="border-b border-base-300 bg-base-200/50">
+  <div class="mx-auto w-full max-w-6xl px-4 py-10">
+    <div class="stats stats-vertical w-full border border-base-300 bg-base-100 shadow-sm sm:stats-horizontal">
+      <div class="stat">
+        <div class="stat-title">Tools</div>
+        <div class="stat-value text-primary">8</div>
+        <div class="stat-desc">Search to attachments</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Providers</div>
+        <div class="stat-value">2</div>
+        <div class="stat-desc">Gmail and generic IMAP</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Writes</div>
+        <div class="stat-value">0</div>
+        <div class="stat-desc">No send, move or delete</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Hosts</div>
+        <div class="stat-value">Any</div>
+        <div class="stat-desc">MCP-compatible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-6xl px-4 py-16">
+  <div class="max-w-2xl">
+    <p class="text-base font-semibold text-primary">Why this server</p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight">Reading mail, <span class="title-accent">and nothing else</span>.</h2>
+    <p class="mt-3 text-base-content/70">
+      Most email MCP servers hand the agent a full mailbox editor. MailGlass does not have
+      that capability to give.
+    </p>
+  </div>
+
+  <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div class="card border border-base-300 bg-base-200">
+      <div class="card-body">
+        <h3 class="card-title text-base">Read-only by design</h3>
+        <p class="text-base leading-relaxed text-base-content/70">
+          Mailboxes are opened with EXAMINE and bodies fetched with BODY.PEEK. There is no
+          send, move, delete or mark-as-read path in the code.
+        </p>
+      </div>
+    </div>
+    <div class="card border border-base-300 bg-base-200">
+      <div class="card-body">
+        <h3 class="card-title text-base">Two providers, one interface</h3>
+        <p class="text-base leading-relaxed text-base-content/70">
+          Gmail for its query language and native threads; any IMAP server for everything
+          else. The same eight tools work on both.
+        </p>
+      </div>
+    </div>
+    <div class="card border border-base-300 bg-base-200">
+      <div class="card-body">
+        <h3 class="card-title text-base">Capabilities you can ask for</h3>
+        <p class="text-base leading-relaxed text-base-content/70">
+          <code>server_info</code> reports what each account can actually do, so the agent
+          knows before it calls a tool that IMAP threads are reconstructed, not native.
+        </p>
+      </div>
+    </div>
+    <div class="card border border-base-300 bg-base-200">
+      <div class="card-body">
+        <h3 class="card-title text-base">Nothing leaves your machine</h3>
+        <p class="text-base leading-relaxed text-base-content/70">
+          No servers, no telemetry. An optional local cache keeps repeat reads instant, and
+          you can switch all disk writes off.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-t border-base-300 bg-base-200/50">
+  <div class="mx-auto w-full max-w-6xl px-4 py-16">
+    <div class="max-w-2xl">
+      <p class="text-base font-semibold text-primary">Providers</p>
+      <h2 class="mt-2 text-3xl font-bold tracking-tight">Pick your <span class="title-accent">mailbox</span>.</h2>
+    </div>
+    <div class="card mt-8 overflow-hidden border border-base-300 bg-base-200">
+      <div class="card-body p-0">
+        <div class="overflow-x-auto">
+          <table class="table">
+            <thead>
+              <tr><th>Provider</th><th>Best at</th><th>Trade-off</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Gmail</td>
+                <td>Full Gmail query syntax, native conversations, attachment filters</td>
+                <td>Needs an app password; Gmail throttles each new login</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Generic IMAP</td>
+                <td>Any IMAP server, no vendor lock-in, fast logins</td>
+                <td>Plain search only; threads are reconstructed and can be partial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto w-full max-w-6xl px-4 py-16">
+  <div class="rounded-box border border-base-300 bg-base-200 p-8 sm:p-12">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl font-bold tracking-tight">Ready in one app password.</h2>
+      <p class="mt-3 text-base-content/70">
+        Create the credential, write one config file, point your MCP host at it. Five minutes,
+        no cloud setup.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/mailglass-email-mcp/install/">Install MailGlass</a>
+        <a class="btn btn-outline" href="/mailglass-email-mcp/configuration/">Configuration reference</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+  <footer class="bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a class="link link-hover" href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub Repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm Package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker Image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:justify-center">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>

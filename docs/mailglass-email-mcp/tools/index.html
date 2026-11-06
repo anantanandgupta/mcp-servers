@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Tools for AI Agents | MCP Servers</title>
+<meta name="description" content="The eight read-only tools in MailGlass: list folders, search, count, read, follow threads, list and download attachments, and inspect capabilities.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/mailglass-email-mcp/tools/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Anant Anand Gupta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#4f46e5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Email Tools for AI Agents">
+<meta property="og:description" content="The eight read-only tools in MailGlass: list folders, search, count, read, follow threads, list and download attachments, and inspect capabilities.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/mailglass-email-mcp/tools/">
+
+
+<meta property="og:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Email Tools for AI Agents">
+<meta name="twitter:description" content="The eight read-only tools in MailGlass: list folders, search, count, read, follow threads, list and download attachments, and inspect capabilities.">
+<meta name="twitter:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta name="twitter:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Email Tools for AI Agents",
+  "description": "The eight read-only tools in MailGlass: list folders, search, count, read, follow threads, list and download attachments, and inspect capabilities.",
+  "url": "https://mcp.anantanandgupta.net/mailglass-email-mcp/tools/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MCP Servers",
+    "url": "https://mcp.anantanandgupta.net/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MCP Servers",
+      "item": "https://mcp.anantanandgupta.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MailGlass Email MCP",
+      "item": "https://mcp.anantanandgupta.net/github-pro-mcp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tools",
+      "item": "https://mcp.anantanandgupta.net/mailglass-email-mcp/tools/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="flex min-h-screen flex-col bg-base-100 text-base-content antialiased">
+  <div class="sticky top-0 z-40">
+    <header class="border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        
+        <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/mailglass-email-mcp/" class="text-base font-semibold text-base-content/80">MailGlass Email MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/mailglass-email-mcp/" class="">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/install/" class="">Install</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/tools/" class="menu-active">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/configuration/" class="">Configuration</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  </div>
+  <main id="main" class="flex flex-1 flex-col">
+
+
+<div class="mx-auto w-full max-w-5xl px-4 py-12">
+  <p class="text-base font-semibold text-primary">Tools</p>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">Eight tools. <span class="title-accent">All read-only</span>.</h1>
+  <p class="mt-3 max-w-2xl text-base-content/70">
+    Every tool only inspects mail. There is no send, move, delete, label or mark-as-read
+    capability to enable; the gate defaults to read-only and the code has no write path.
+  </p>
+
+  <div class="mt-10 grid gap-4 md:grid-cols-2">
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>list_folders</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Enumerate folders and labels.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning"></span>
+  <span>Partial, <span class="text-base-content/60">no archive, starred or important</span></span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>search_emails</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Query mail and return sender, subject, date, attachment flag, message and thread ids.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full, <span class="text-base-content/60">full query language</span></span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning"></span>
+  <span>Partial, <span class="text-base-content/60">plain search, no operators</span></span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>count_emails</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Count matches without returning them.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>get_email</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Read one message&#39;s headers and text body.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>get_thread</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Read a conversation oldest-first.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full, <span class="text-base-content/60">native thread id</span></span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning"></span>
+  <span>Partial, <span class="text-base-content/60">reconstructed from headers</span></span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>list_attachments</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">List a message&#39;s attachments with index, type and size.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>get_attachment</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Save an attachment, or return an image inline.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-3">
+        <h2 class="card-title text-base"><code>server_info</code></h2>
+        <p class="text-sm leading-relaxed text-base-content/70">Report accounts, capabilities and per-tool support, with an optional live probe.</p>
+        <dl class="mt-auto grid grid-cols-[4.5rem_1fr] items-start gap-x-3 gap-y-2 pt-2 text-sm">
+          <dt class="text-base-content/50">Gmail</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+          <dt class="text-base-content/50">IMAP</dt>
+          <dd><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</dd>
+        </dl>
+      </div>
+    </article>
+    
+  </div>
+
+  <h2 class="mt-14 text-2xl font-bold tracking-tight">Search <span class="title-accent">filters</span></h2>
+  <p class="mt-3 max-w-2xl text-base-content/70">
+    The same filter shape works on both providers, but each one fills in as much as it can.
+    Where a filter cannot be honoured, the server explains that instead of guessing.
+  </p>
+  <div class="card mt-4 overflow-hidden border border-base-300 bg-base-200">
+    <div class="card-body p-0">
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead><tr><th>Filter</th><th>Gmail</th><th>Generic IMAP</th></tr></thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">from</code><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">subject</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+            </tr>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">unread</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+            </tr>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">keyword</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full, <span class="text-base-content/60">full syntax: from, label, larger, OR</span></span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning"></span>
+  <span>Partial, <span class="text-base-content/60">literal text only</span></span>
+</span>
+</td>
+            </tr>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">has_attachment</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-base-content/30"></span>
+  <span>Not supported, <span class="text-base-content/60">refused with an explanation</span></span>
+</span>
+</td>
+            </tr>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">after</code><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">before</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full, <span class="text-base-content/60">Gmail date semantics</span></span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning"></span>
+  <span>Partial, <span class="text-base-content/60">arrival date, not the Date header</span></span>
+</span>
+</td>
+            </tr>
+            
+            <tr>
+              <td>
+                <span class="flex flex-wrap gap-1">
+                  <code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">folder</code><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">limit</code><code class="rounded bg-base-300 px-1.5 py-0.5 text-sm">cursor</code>
+                </span>
+              </td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+              <td><span class="inline-flex items-start gap-2">
+  <span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-success"></span>
+  <span>Full</span>
+</span>
+</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-14 text-2xl font-bold tracking-tight">Know <span class="title-accent">before you call</span></h2>
+  <p class="mt-3 max-w-2xl text-base-content/70">
+    <code>server_info</code> returns a per-account support map, so the agent can check whether
+    <code>get_thread</code> is native or reconstructed before using it.
+  </p>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">server_info</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div></div>
+    <div class="code-scroll">
+      <pre><code>{
+  "accounts": [
+    {
+      "id": "work", "provider": "gmail",
+      "capabilities": ["search","count","read","thread","attachments"],
+      "tools": { "search_emails": "full", "get_thread": "full" }
+    },
+    {
+      "id": "corp", "provider": "imap",
+      "capabilities": ["search","count","read","attachments"],
+      "tools": { "search_emails": "partial", "get_thread": "partial" }
+    }
+  ]
+}</code></pre>
+    </div>
+  </div>
+</div></div>
+
+  <div class="card border-base-300 bg-base-200 mt-12">
+  <div class="card-body">
+    <h2 class="card-title text-base">Attachments and images</h2>
+    <div class="space-y-2 text-sm leading-relaxed text-base-content/70">
+    <p>
+      <code>get_attachment</code> writes to disk and returns a path by default. Pass
+      <code>inline: true</code> to receive an image as an image block; opt-in, because images
+      cost vision tokens and their contents are untrusted input. Anything above ~4 MB still
+      returns a file.
+    </p>
+  </div>
+  </div>
+</div>
+</div>
+</main>
+  <footer class="bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a class="link link-hover" href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub Repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm Package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker Image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:justify-center">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>

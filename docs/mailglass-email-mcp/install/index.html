@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en" data-theme="mcp">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install MailGlass Email MCP | MCP Servers</title>
+<meta name="description" content="Install MailGlass from npm or Docker, create a config file with an app password or IMAP credentials, and connect opencode, Claude Desktop, Cursor or VS Code.">
+<link rel="canonical" href="https://mcp.anantanandgupta.net/mailglass-email-mcp/install/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Anant Anand Gupta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#4f46e5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCP Servers">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Install MailGlass Email MCP">
+<meta property="og:description" content="Install MailGlass from npm or Docker, create a config file with an app password or IMAP credentials, and connect opencode, Claude Desktop, Cursor or VS Code.">
+<meta property="og:url" content="https://mcp.anantanandgupta.net/mailglass-email-mcp/install/">
+
+
+<meta property="og:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Install MailGlass Email MCP">
+<meta name="twitter:description" content="Install MailGlass from npm or Docker, create a config file with an app password or IMAP credentials, and connect opencode, Claude Desktop, Cursor or VS Code.">
+<meta name="twitter:image" content="https://mcp.anantanandgupta.net/og-image.png">
+<meta name="twitter:image:alt" content="MailGlass Email MCP card: read-only email tools for AI agents">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "mcp" || stored === "mcpdark"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "mcpdark" : "mcp");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MCP Servers",
+  "url": "https://mcp.anantanandgupta.net/",
+  "description": "Production-ready MCP servers for AI agents, built by Anant Anand Gupta.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Install MailGlass Email MCP",
+  "description": "Install MailGlass from npm or Docker, create a config file with an app password or IMAP credentials, and connect opencode, Claude Desktop, Cursor or VS Code.",
+  "url": "https://mcp.anantanandgupta.net/mailglass-email-mcp/install/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MCP Servers",
+    "url": "https://mcp.anantanandgupta.net/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Anant Anand Gupta"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "MCP Servers",
+      "item": "https://mcp.anantanandgupta.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MailGlass Email MCP",
+      "item": "https://mcp.anantanandgupta.net/github-pro-mcp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Install",
+      "item": "https://mcp.anantanandgupta.net/mailglass-email-mcp/install/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="flex min-h-screen flex-col bg-base-100 text-base-content antialiased">
+  <div class="sticky top-0 z-40">
+    <header class="border-b border-base-300 bg-base-100/85 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl gap-2 px-4">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost gap-2 px-2 text-base font-semibold">
+        <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+            <path d="m3 12 9 5 9-5"/>
+            <path d="m3 17 9 5 9-5"/>
+          </svg>
+        </span>
+        <span>MCP Servers</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        <li><a href="/#servers">Servers</a></li>
+        
+        <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        
+        <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-1">
+      <button id="theme-toggle" class="btn btn-ghost btn-square" aria-label="Toggle color theme" title="Toggle color theme">
+        <svg class="icon-moon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+        <svg class="icon-sun size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-square" aria-label="Open menu">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+          <li><a href="/#servers">Servers</a></li>
+          
+          <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+<div class="border-b border-base-300 bg-base-100">
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/mailglass-email-mcp/" class="text-base font-semibold text-base-content/80">MailGlass Email MCP</a>
+    <nav aria-label="Section navigation" class="overflow-x-auto">
+      <ul class="menu menu-horizontal gap-1 p-0">
+        
+        <li>
+          <a href="/mailglass-email-mcp/" class="">Overview</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/install/" class="menu-active">Install</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/tools/" class="">Tools</a>
+        </li>
+        
+        <li>
+          <a href="/mailglass-email-mcp/configuration/" class="">Configuration</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  </div>
+  <main id="main" class="flex flex-1 flex-col">
+<div class="mx-auto w-full max-w-4xl px-4 py-12">
+  <p class="text-base font-semibold text-primary">Install</p>
+  <h1 class="mt-2 text-4xl font-bold tracking-tight">Up and running in <span class="title-accent">five minutes</span>.</h1>
+  <p class="mt-3 text-base-content/70">
+    MailGlass needs Node 22.13+ and one config file. There is no cloud setup and no OAuth
+    application to register.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">1. <span class="title-accent">Prerequisites</span></h2>
+  <ul class="mt-3 list-disc space-y-2 pl-5 text-base-content/70">
+    <li><strong>Node.js 22.13+</strong> (uses the built-in <code>node:sqlite</code> for the local index).</li>
+    <li>
+      <strong>Gmail:</strong> 2-Step Verification enabled, an app password created at
+      <a class="link link-primary" href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>,
+      and IMAP enabled in Gmail settings. <a class="link link-primary" href="/mailglass-email-mcp/app-password/">How to create one</a>.
+    </li>
+    <li><strong>Or any IMAP server:</strong> host, port, TLS mode, username and password.</li>
+  </ul>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">2. <span class="title-accent">Install</span></h2>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div></div>
+    <div class="code-scroll">
+      <pre><code>npm install -g mailglass-email-mcp
+mailglass --version</code></pre>
+    </div>
+  </div>
+</div></div>
+
+  <p class="mt-4 text-sm text-base-content/60">Or run the container:</p>
+  
+  <div class="mt-2 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">docker</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+    <div class="code-scroll">
+      <pre><code>docker run -i --rm \
+  -v "$PWD/config.json:/cfg/config.json:ro" \
+  -e MAILGLASS_CONFIG=/cfg/config.json \
+  anantanandgupta/mailglass-email-mcp</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-sm text-base-content/60">
+    There are no ports: it is an MCP stdio server, so <code>-i</code> is required.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">3. Write the <span class="title-accent">config</span></h2>
+  <p class="mt-3 text-base-content/70">
+    One JSON file, at <code>~/.config/mailglass/config.json</code> (or anywhere, via
+    <code>MAILGLASS_CONFIG</code>). Secrets are references, never literals.
+  </p>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">config.json</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div></div>
+    <div class="code-scroll">
+      <pre><code>{
+  "defaultAccount": "work",
+  "accounts": [
+    {
+      "id": "work",
+      "provider": "gmail",
+      "email": "you@gmail.com",
+      "auth": { "password": { "file": "~/.secrets/gmail_app_password" } }
+    }
+  ]
+}</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-sm text-base-content/60">
+    Save the app password as the only content of that file, then <code>chmod 600</code> it.
+    The full schema is in the <a class="link link-primary" href="/mailglass-email-mcp/configuration/">configuration reference</a>. If you do not have an app password yet, see <a class="link link-primary" href="/mailglass-email-mcp/app-password/">Create a Gmail app password</a>.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">4. Connect your <span class="title-accent">host</span></h2>
+  <p class="mt-3 text-base-content/70">opencode, for example:</p>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">opencode.jsonc</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div></div>
+    <div class="code-scroll">
+      <pre><code>{
+  "mcp": {
+    "servers": {
+      "mailglass": {
+        "type": "local",
+        "command": ["mailglass"],
+        "environment": {
+          "MAILGLASS_CONFIG": "/Users/you/.config/mailglass/config.json"
+        }
+      }
+    }
+  }
+}</code></pre>
+    </div>
+  </div>
+</div></div>
+  <p class="mt-3 text-sm text-base-content/60">
+    Only the config path is passed, so no credential ever reaches a process environment.
+  </p>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">5. <span class="title-accent">Verify</span></h2>
+  
+  <div class="mt-4 w-full"><div class="code-card">
+  <div class="code-head">
+    <span class="code-dot code-dot-red"></span>
+    <span class="code-dot code-dot-yellow"></span>
+    <span class="code-dot code-dot-green"></span>
+    <span class="code-title">terminal</span>
+  </div>
+  <div class="code-body">
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div></div>
+    <div class="code-scroll">
+      <pre><code>mailglass --check
+
+✓ config        /Users/you/.config/mailglass/config.json
+✓ work (gmail)  y***@gmail.com  readOnly: true
+✓ connect + auth imap.gmail.com:993
+✓ folders       16
+✓ capabilities  X-GM-EXT-1</code></pre>
+    </div>
+  </div>
+</div></div>
+
+  <h2 class="mt-12 text-2xl font-bold tracking-tight">Exit <span class="title-accent">codes</span></h2>
+  <div class="card mt-4 overflow-hidden border border-base-300 bg-base-200">
+    <div class="card-body p-0">
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead><tr><th>Exit</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>0</code></td><td>Everything works</td></tr>
+            <tr><td><code>1</code></td><td>Configuration problem</td></tr>
+            <tr><td><code>2</code></td><td>Credentials rejected</td></tr>
+            <tr><td><code>3</code></td><td>Network or proxy problem</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-base-300 bg-base-200 mt-12">
+  <div class="card-body">
+    <h2 class="card-title text-base">Common issues</h2>
+    <div class="space-y-2 text-sm leading-relaxed text-base-content/70">
+    <ul class="list-disc space-y-2 pl-5">
+      <li><strong>Exit 2</strong>: app password revoked, spaces not stripped, IMAP disabled, or a Workspace admin disabled app passwords.</li>
+      <li><strong>Exit 3</strong>: VPN or proxy blocking IMAP ports. Check <code>nc -vz imap.gmail.com 993</code>, or set <code>proxy.url</code> in the config.</li>
+      <li><strong>Two accounts, one repo?</strong> Use separate <code>id</code> values; storage is per account id.</li>
+    </ul>
+  </div>
+  </div>
+</div>
+</div>
+</main>
+  <footer class="bg-base-200">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-semibold">
+          <span class="inline-flex size-8 items-center justify-center rounded-lg bg-primary text-primary-content">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+              <path d="m3 12 9 5 9-5"/>
+              <path d="m3 17 9 5 9-5"/>
+            </svg>
+          </span>
+          MCP Servers
+        </a>
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-base-content/70">
+          Production-ready MCP servers for AI agents, built for real workflows.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">MCPs</h2>
+        <ul class="space-y-2 text-base">
+          
+          <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a class="link link-hover" href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-base-content/50">Links</h2>
+        <ul class="space-y-2 text-base">
+          <li><a class="link link-hover" href="https://github.com/anantanandgupta/mcp-servers">GitHub Repository</a></li>
+          <li><a class="link link-hover" href="https://www.npmjs.com/package/github-pro-mcp">npm Package</a></li>
+          <li><a class="link link-hover" href="https://hub.docker.com/r/anantanandgupta/github-pro-mcp">Docker Image</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center gap-2 border-t border-base-300 pt-6 text-sm text-base-content/60 sm:flex-row sm:justify-center">
+      <p>© 2026 Anant Anand Gupta. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/theme.js" defer></script>
+</body>
+</html>

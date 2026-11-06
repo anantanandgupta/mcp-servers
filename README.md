@@ -45,7 +45,43 @@ For host configuration, token permissions and the full tool list, see the
 [GitHub Pro MCP guide](./github-pro-mcp/README.md) and the
 [documentation](https://mcp.anantanandgupta.net/github-pro-mcp/).
 
-## Quick start
+## MailGlass Email MCP
+
+Give your agent read-only access to Gmail or any IMAP mailbox: 8 tools for
+searching, reading, following threads and downloading attachments, with no send,
+move or delete capability at all.
+
+- Search with the provider's own query language, and count without fetching.
+- Read one message or a whole thread, oldest first.
+- List and download attachments, or return an image inline.
+- Ask for a per-account capability map before calling a tool.
+
+Install it globally:
+
+```bash
+npm install -g mailglass-email-mcp
+```
+
+Or run it without installing:
+
+```bash
+npx -y mailglass-email-mcp
+```
+
+Or use Docker:
+
+```bash
+docker run -i --rm \
+  -v "$PWD/config.json:/cfg/config.json:ro" \
+  -e MAILGLASS_CONFIG=/cfg/config.json \
+  anantanandgupta/mailglass-email-mcp
+```
+
+For the Gmail app password setup, configuration schema and the full tool list,
+see the [MailGlass guide](./mailglass-email-mcp/README.md) and the
+[documentation](https://mcp.anantanandgupta.net/mailglass-email-mcp/).
+
+## GitHub Pro quick start
 
 1. Create a fine-grained token with the generator:
    https://mcp.anantanandgupta.net/github-pro-mcp/token/
@@ -59,8 +95,9 @@ The server runs on your machine and calls GitHub directly with your token.
 
 - **Documentation:** https://mcp.anantanandgupta.net/
 - **GitHub Pro MCP guide:** [github-pro-mcp/README.md](./github-pro-mcp/README.md)
-- **npm:** https://www.npmjs.com/package/github-pro-mcp
-- **Docker:** https://hub.docker.com/r/anantanandgupta/github-pro-mcp
+- **MailGlass guide:** [mailglass-email-mcp/README.md](./mailglass-email-mcp/README.md)
+- **npm:** https://www.npmjs.com/package/github-pro-mcp and https://www.npmjs.com/package/mailglass-email-mcp
+- **Docker:** https://hub.docker.com/r/anantanandgupta/github-pro-mcp and https://hub.docker.com/r/anantanandgupta/mailglass-email-mcp
 - **Issues:** https://github.com/anantanandgupta/mcp-servers/issues
 
 ## More servers

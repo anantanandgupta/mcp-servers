@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MCP Servers for AI Agents</title>
-<meta name="description" content="MCP servers that give AI agents real tools. Start with GitHub Pro MCP: 34 tools for issues, pull requests, files, projects and organizations.">
+<meta name="description" content="MCP servers that give AI agents real tools. GitHub Pro MCP for issues and pull requests, MailGlass Email MCP for read-only email across Gmail and IMAP.">
 <link rel="canonical" href="https://mcp.anantanandgupta.net/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Anant Anand Gupta">
@@ -16,20 +16,21 @@
 <meta property="og:site_name" content="MCP Servers">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="MCP Servers for AI Agents">
-<meta property="og:description" content="MCP servers that give AI agents real tools. Start with GitHub Pro MCP: 34 tools for issues, pull requests, files, projects and organizations.">
+<meta property="og:description" content="MCP servers that give AI agents real tools. GitHub Pro MCP for issues and pull requests, MailGlass Email MCP for read-only email across Gmail and IMAP.">
 <meta property="og:url" content="https://mcp.anantanandgupta.net/">
+
 
 <meta property="og:image" content="https://mcp.anantanandgupta.net/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="MCP Servers card: tools your agent can actually use, with GitHub Pro MCP as the first server">
+<meta property="og:image:alt" content="MCP Servers card: tools your agent can actually use">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MCP Servers for AI Agents">
-<meta name="twitter:description" content="MCP servers that give AI agents real tools. Start with GitHub Pro MCP: 34 tools for issues, pull requests, files, projects and organizations.">
+<meta name="twitter:description" content="MCP servers that give AI agents real tools. GitHub Pro MCP for issues and pull requests, MailGlass Email MCP for read-only email across Gmail and IMAP.">
 <meta name="twitter:image" content="https://mcp.anantanandgupta.net/og-image.png">
-<meta name="twitter:image:alt" content="MCP Servers card: tools your agent can actually use, with GitHub Pro MCP as the first server">
+<meta name="twitter:image:alt" content="MCP Servers card: tools your agent can actually use">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -88,7 +89,11 @@
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal gap-1 px-1">
         <li><a href="/#servers">Servers</a></li>
+        
         <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+        
+        <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+        
       </ul>
     </div>
 
@@ -111,7 +116,11 @@
         </button>
         <ul tabindex="0" class="menu dropdown-content z-50 mt-3 w-60 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
           <li><a href="/#servers">Servers</a></li>
+          
           <li><a href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
+          
         </ul>
       </div>
     </div>
@@ -248,7 +257,11 @@
         <div class="max-w-2xl">
           <div class="flex flex-wrap items-center gap-2">
             <span class="badge badge-success badge-outline">stable</span>
-            <span class="text-sm text-base-content/50">34 tools · 5 task areas</span>
+            <span class="flex items-center gap-2 text-sm text-base-content/50">
+              <span>34 tools</span>
+              <span class="inline-block size-1 rounded-full bg-current opacity-40"></span>
+              <span>5 task areas</span>
+            </span>
           </div>
           <h3 class="mt-3 text-xl font-semibold">GitHub Pro MCP</h3>
           <p class="mt-2 text-base leading-relaxed text-base-content/70">34 GitHub tools for issues, pull requests, files, projects and organizations.</p>
@@ -261,6 +274,28 @@
       </div>
     </article>
     
+    <article class="card border border-base-300 bg-base-200">
+      <div class="card-body gap-4 md:flex md:flex-row md:items-center md:justify-between">
+        <div class="max-w-2xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="badge badge-success badge-outline">new</span>
+            <span class="flex items-center gap-2 text-sm text-base-content/50">
+              <span>8 tools</span>
+              <span class="inline-block size-1 rounded-full bg-current opacity-40"></span>
+              <span>4 task areas</span>
+            </span>
+          </div>
+          <h3 class="mt-3 text-xl font-semibold">MailGlass Email MCP</h3>
+          <p class="mt-2 text-base leading-relaxed text-base-content/70">8 read-only email tools for Gmail and generic IMAP: search, read, threads and attachments.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a class="btn btn-primary btn-sm" href="/mailglass-email-mcp/">Open docs</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.npmjs.com/package/mailglass-email-mcp">npm</a>
+          <a class="btn btn-ghost btn-sm" href="https://hub.docker.com/r/anantanandgupta/mailglass-email-mcp">Docker</a>
+        </div>
+      </div>
+    </article>
+    
   </div>
 </section>
 
@@ -268,10 +303,14 @@
   <div class="mx-auto w-full max-w-6xl px-4 py-20 text-center">
     <h2 class="text-3xl font-bold tracking-tight">Pick a server. Give your agent a <span class="title-accent">new capability</span>.</h2>
     <p class="mx-auto mt-3 max-w-xl text-base-content/70">
-      Start with GitHub Pro MCP, then add more as they ship.
+      Two servers today, more as they ship.
     </p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
+      
       <a class="btn btn-primary" href="/github-pro-mcp/">GitHub Pro MCP</a>
+      
+      <a class="btn btn-primary" href="/mailglass-email-mcp/">MailGlass Email MCP</a>
+      
       <a class="btn btn-ghost" href="https://github.com/anantanandgupta/mcp-servers">View on GitHub</a>
     </div>
   </div>
@@ -301,6 +340,8 @@
         <ul class="space-y-2 text-base">
           
           <li><a class="link link-hover" href="/github-pro-mcp/">GitHub Pro MCP</a></li>
+          
+          <li><a class="link link-hover" href="/mailglass-email-mcp/">MailGlass Email MCP</a></li>
           
         </ul>
       </div>
