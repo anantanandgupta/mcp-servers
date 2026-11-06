@@ -3,19 +3,56 @@
 [![npm version](https://img.shields.io/npm/v/github-pro-mcp)](https://www.npmjs.com/package/github-pro-mcp)
 [![Docker image](https://img.shields.io/docker/v/anantanandgupta/github-pro-mcp)](https://hub.docker.com/r/anantanandgupta/github-pro-mcp)
 
-An MCP server that gives your agent a complete GitHub toolkit: **34 tools** for issues, pull requests, files, projects, labels and organizations.
+GitHub Pro MCP gives Claude Code, Cursor, Copilot, opencode and any MCP host a
+complete GitHub toolkit: **34 tools** for issues, pull requests, files, projects,
+labels and organizations.
 
-**Documentation and token generator:** https://mcp.anantanandgupta.net/
+It runs locally, connects to your host over stdio, and calls the GitHub API
+directly with your own token. There is no intermediary service.
 
-## Features
+New to MCP? It is the open protocol that lets a host connect a model to tools:
+https://modelcontextprotocol.io/
 
-- **34 Tools** — issues, pull requests, repositories, projects v2, labels, organizations, file operations, server info
-- **Complete GitHub coverage** — issues, pull requests, files, projects, labels and organizations, without writing pagination or composite queries by hand
-- **Keeps working** — when GitHub is slow or rate-limited
-- **Clear errors** — when a call fails, so the agent can recover or ask
-- **Owner/Repo Pinning** — lock the server to a specific owner or repository as a safety guardrail
+**Documentation, installation guides, permissions and token generator:**
+https://mcp.anantanandgupta.net/
+
+## What you can do
+
+- **Triage issues** - read, search, comment, label, close, reopen and manage
+  sub-issues.
+- **Review pull requests** - read details, commits and reviews, create pull
+  requests and merge them.
+- **Work with files** - read, create, update and delete files, and search code
+  across repositories.
+- **Organize work** - set Priority, Effort and dates, and move items through
+  Projects v2.
+- **Find your way around** - list every repository an organization owns, and
+  search organizations and code.
+
+Ask in plain language. The agent chooses the tools, and the server handles the
+API details.
+
+## Why this server
+
+- **34 tools across 8 domains.** Issues, pull requests, repositories, projects,
+  labels, organizations, file operations and server info.
+- **Organization-aware.** `owner_list_repository` lists every repository in an
+  organization.
+- **Built for real API conditions.** Retries with backoff, rate-limit handling
+  and a circuit breaker for repeated failures. The defaults work; there is
+  nothing to tune.
+- **Guardrails.** Pin the server to one owner or repository with
+  `GITHUB_OWNER` / `GITHUB_REPO`, and mismatched calls are rejected.
+- **Any MCP host.** A standard stdio server. Works with opencode, Claude
+  Desktop, Cursor, VS Code and anything else that speaks MCP.
+- **No runtime dependencies.** The npm package ships one bundled file, so
+  installing it does not pull a dependency tree.
+- **GitHub Enterprise Server.** Point `GITHUB_HOST` at your GHES API.
 
 ## Installation
+
+Requires Node.js 22 or newer for the npm package. The Docker image includes
+Node.js.
 
 ### npm
 
@@ -24,53 +61,42 @@ An MCP server that gives your agent a complete GitHub toolkit: **34 tools** for 
 npm install -g github-pro-mcp
 
 # Or run directly without installing
-npx github-pro-mcp
+npx -y github-pro-mcp
 ```
 
 ### Docker
 
-Multi-arch images for `linux/amd64` and `linux/arm64`:
+Multi-arch images are published for `linux/amd64` and `linux/arm64`.
 
 ```bash
 docker pull anantanandgupta/github-pro-mcp
 ```
 
-## Quick Start
+## Quick start
 
-Set your GitHub token and run:
+1. Create a token with the generator:
+   https://mcp.anantanandgupta.net/github-pro-mcp/token/
+2. Install the server with npm or Docker.
+3. Add it to your MCP host and restart the host.
+4. Verify with the `auth_get_current_login` tool.
 
-```bash
-export GITHUB_PERSONAL_ACCESS_TOKEN=ghp_your_token_here
-github-pro-mcp
-```
+### Create a token
 
-Or with Docker:
+Use a fine-grained personal access token. The generator builds a pre-filled
+GitHub page with the right checkboxes:
 
-```bash
-docker run -i --rm \
-  -e GITHUB_PERSONAL_ACCESS_TOKEN=ghp_your_token_here \
-  anantanandgupta/github-pro-mcp
-```
+- **Read-only preset:** Metadata read, Contents read, Issues read, Pull requests
+  read, Issue fields read, Issue types read, Projects read.
+- **Read-write preset:** Metadata read, Contents write, Issues write, Pull
+  requests write, Issue fields write, Issue types read, Projects write.
 
-## Configuration
+Merging a pull request also requires Contents write. If the repository belongs
+to an organization that requires approval, request it while creating the token.
 
-### Required
+The full per-tool permission table is at
+https://mcp.anantanandgupta.net/github-pro-mcp/permissions/
 
-| Variable | Description |
-|----------|-------------|
-| `GITHUB_PERSONAL_ACCESS_TOKEN` | GitHub PAT with appropriate scopes |
-
-### Optional
-
-| Variable | Description |
-|----------|-------------|
-| `GITHUB_HOST` | For GitHub Enterprise Server: `https://{hostname}/api/v3` |
-| `GITHUB_OWNER` | Pin the server to a single owner and reject mismatched calls |
-| `GITHUB_REPO` | Pin the server to a single repository |
-
-The defaults handle retries, rate limits and logging. You do not need to tune them for normal use.
-
-## Usage with opencode
+### Connect opencode
 
 Add to your opencode config (v2 nests servers under `mcp.servers`):
 
@@ -90,7 +116,39 @@ Add to your opencode config (v2 nests servers under `mcp.servers`):
 }
 ```
 
-For Docker-based usage:
+`{env:GITHUB_TOKEN}` reads that variable from the environment opencode starts
+in. Use a literal token instead if you prefer.
+
+### Connect Claude Desktop
+
+Edit `claude_desktop_config.json` and restart Claude Desktop:
+
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "github-pro-mcp"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_..."
+      }
+    }
+  }
+}
+```
+
+### Connect Cursor or VS Code
+
+Both support stdio MCP servers. The configuration is the same command and token
+as above; only the file location differs. Exact snippets are in the
+installation guide:
+
+https://mcp.anantanandgupta.net/github-pro-mcp/install/
+
+### Use Docker with opencode
 
 ```jsonc
 {
@@ -108,7 +166,31 @@ For Docker-based usage:
 }
 ```
 
-## Tool Reference
+The same `docker run` command works as the server command in other hosts.
+
+## Configuration
+
+### Required
+
+| Variable | Description |
+|----------|-------------|
+| `GITHUB_PERSONAL_ACCESS_TOKEN` | GitHub personal access token. Fine-grained is recommended. |
+
+### Optional
+
+| Variable | Description |
+|----------|-------------|
+| `GITHUB_HOST` | GitHub Enterprise Server API, for example `https://github.example.com/api/v3` |
+| `GITHUB_OWNER` | Pin the server to a single owner and reject mismatched calls |
+| `GITHUB_REPO` | Pin the server to a single repository and reject mismatched calls |
+
+Retries, rate limiting and logging have sensible defaults. You do not need to
+tune them for normal use.
+
+## Tools
+
+34 tools across 8 domains. Tool names appear in your host's tool list after the
+server starts.
 
 | Domain | Tools | Count |
 |--------|-------|-------|
@@ -122,17 +204,31 @@ For Docker-based usage:
 | **Server Info** | `server_info` | 1 |
 | **Total** | | **34** |
 
-## FAQ / Troubleshooting
+Task-based examples and the prompts they respond to are at
+https://mcp.anantanandgupta.net/github-pro-mcp/tools/
 
-| Error | Likely Cause |
-|-------|-------------|
-| `401` | Token expired or invalid |
-| `403` | Missing OAuth scopes or SSO |
-| `404` | Resource doesn't exist or no access |
-| `429` | Rate limited — wait and retry |
+## Troubleshooting
+
+| Symptom | Likely cause |
+|---------|--------------|
+| `401` | Token expired, revoked or mistyped |
+| `403` | Missing permission, organization approval, or SSO not authorized |
+| `404` | The resource does not exist, or the token cannot see it |
+| `429` | Rate limited. The server retries; wait if it persists |
+| No tools appear in the host | The host was not restarted, or the server failed to start |
+| Server exits immediately | `GITHUB_PERSONAL_ACCESS_TOKEN` is not set in the host's environment |
+
+## Support
+
+- **Documentation:** https://mcp.anantanandgupta.net/
+- **Issues and feature requests:** https://github.com/anantanandgupta/mcp-servers/issues
+- **npm:** https://www.npmjs.com/package/github-pro-mcp
+- **Docker:** https://hub.docker.com/r/anantanandgupta/github-pro-mcp
 
 ## License
 
 Proprietary. Free to install and use, including for internal business purposes.
 Modification, redistribution, sublicensing and reverse engineering are not
-permitted. See [LICENSE](LICENSE) for the full terms.
+permitted. See the
+[license](https://github.com/anantanandgupta/mcp-servers/blob/main/github-pro-mcp/LICENSE)
+for the full terms.
