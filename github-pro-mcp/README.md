@@ -7,6 +7,10 @@ GitHub Pro MCP gives Claude Code, Cursor, Copilot, opencode and any MCP host a
 complete GitHub toolkit: **34 tools** for issues, pull requests, files, projects,
 labels and organizations.
 
+Read-only mode is the default. The server registers 19 read tools and keeps the
+15 write tools out of the agent's context. Set
+`GITHUB_MCP_ENABLE_WRITES=true` to load the full set.
+
 It runs locally, connects to your host over stdio, and calls the GitHub API
 directly with your own token. There is no intermediary service.
 
@@ -36,6 +40,10 @@ API details.
 
 - **34 tools across 8 domains.** Issues, pull requests, repositories, projects,
   labels, organizations, file operations and server info.
+- **Read-only by default.** 19 tools, no write surface. Enable writes explicitly.
+- **Built for the common path.** The daily loop is small: read an issue, review a pull
+  request, change a file, update a project field. The long tail stays out of the
+  agent's context until you need it.
 - **Organization-aware.** `owner_list_repository` lists every repository in an
   organization.
 - **Built for real API conditions.** Retries with backoff, rate-limit handling
@@ -43,11 +51,17 @@ API details.
   nothing to tune.
 - **Guardrails.** Pin the server to one owner or repository with
   `GITHUB_OWNER` / `GITHUB_REPO`, and mismatched calls are rejected.
+- **Guided token setup.** The generator builds a pre-filled fine-grained token
+  with a read-only or read-write preset.
 - **Any MCP host.** A standard stdio server. Works with opencode, Claude
   Desktop, Cursor, VS Code and anything else that speaks MCP.
 - **No runtime dependencies.** The npm package ships one bundled file, so
   installing it does not pull a dependency tree.
 - **GitHub Enterprise Server.** Point `GITHUB_HOST` at your GHES API.
+
+If your work is mostly Actions, security scanning, notifications, discussions,
+gists, governance or Copilot, use the official GitHub MCP server. GitHub Pro MCP
+is built for the daily issue, pull request, file and project loop.
 
 ## Installation
 
@@ -80,6 +94,10 @@ docker pull anantanandgupta/github-pro-mcp
 3. Add it to your MCP host and restart the host.
 4. Verify with the `auth_get_current_login` tool.
 
+By default the server is read-only and registers 19 tools. To enable issue,
+pull request, file, label and project writes, set
+`GITHUB_MCP_ENABLE_WRITES=true` in the host environment.
+
 ### Create a token
 
 Use a fine-grained personal access token. The generator builds a pre-filled
@@ -96,6 +114,9 @@ to an organization that requires approval, request it while creating the token.
 The full per-tool permission table is at
 https://mcp.anantanandgupta.net/github-pro-mcp/permissions/
 
+The read-only preset pairs with the default read-only mode. The read-write
+preset requires `GITHUB_MCP_ENABLE_WRITES=true` in the host environment.
+
 ### Connect opencode
 
 Add to your opencode config (v2 nests servers under `mcp.servers`):
@@ -108,7 +129,8 @@ Add to your opencode config (v2 nests servers under `mcp.servers`):
         "type": "local",
         "command": ["npx", "-y", "github-pro-mcp"],
         "environment": {
-          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}",
+          "GITHUB_MCP_ENABLE_WRITES": "true"
         }
       }
     }
@@ -117,7 +139,8 @@ Add to your opencode config (v2 nests servers under `mcp.servers`):
 ```
 
 `{env:GITHUB_TOKEN}` reads that variable from the environment opencode starts
-in. Use a literal token instead if you prefer.
+in. Use a literal token instead if you prefer. Remove
+`GITHUB_MCP_ENABLE_WRITES` to stay read-only.
 
 ### Connect Claude Desktop
 
@@ -133,7 +156,8 @@ Edit `claude_desktop_config.json` and restart Claude Desktop:
       "command": "npx",
       "args": ["-y", "github-pro-mcp"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_..."
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_...",
+        "GITHUB_MCP_ENABLE_WRITES": "true"
       }
     }
   }
@@ -156,9 +180,10 @@ https://mcp.anantanandgupta.net/github-pro-mcp/install/
     "servers": {
       "github_pro": {
         "type": "local",
-        "command": ["docker", "run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "anantanandgupta/github-pro-mcp"],
+        "command": ["docker", "run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "-e", "GITHUB_MCP_ENABLE_WRITES", "anantanandgupta/github-pro-mcp"],
         "environment": {
-          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}",
+          "GITHUB_MCP_ENABLE_WRITES": "true"
         }
       }
     }
@@ -183,14 +208,16 @@ The same `docker run` command works as the server command in other hosts.
 | `GITHUB_HOST` | GitHub Enterprise Server API, for example `https://github.example.com/api/v3` |
 | `GITHUB_OWNER` | Pin the server to a single owner and reject mismatched calls |
 | `GITHUB_REPO` | Pin the server to a single repository and reject mismatched calls |
+| `GITHUB_MCP_ENABLE_WRITES` | Set to `true`, `1`, `yes` or `on` to register the 15 write tools. Default `false` |
 
 Retries, rate limiting and logging have sensible defaults. You do not need to
 tune them for normal use.
 
 ## Tools
 
-34 tools across 8 domains. Tool names appear in your host's tool list after the
-server starts.
+34 tools across 8 domains. Read-only mode registers 19 of them; the other 15
+are write tools. Tool names appear in your host's tool list after the server
+starts.
 
 | Domain | Tools | Count |
 |--------|-------|-------|
@@ -207,6 +234,9 @@ server starts.
 Task-based examples and the prompts they respond to are at
 https://mcp.anantanandgupta.net/github-pro-mcp/tools/
 
+A measured comparison with the official GitHub MCP server is at
+https://mcp.anantanandgupta.net/github-pro-mcp/compare/
+
 ## Troubleshooting
 
 | Symptom | Likely cause |
@@ -217,6 +247,7 @@ https://mcp.anantanandgupta.net/github-pro-mcp/tools/
 | `429` | Rate limited. The server retries; wait if it persists |
 | No tools appear in the host | The host was not restarted, or the server failed to start |
 | Server exits immediately | `GITHUB_PERSONAL_ACCESS_TOKEN` is not set in the host's environment |
+| Write tool not in the list | `GITHUB_MCP_ENABLE_WRITES` is not set to `true` |
 
 ## Support
 

@@ -196,6 +196,10 @@
         </li>
         
         <li>
+          <a href="/github-pro-mcp/compare/" class="">Compare</a>
+        </li>
+        
+        <li>
           <a href="/github-pro-mcp/permissions/" class="">Permissions</a>
         </li>
         
@@ -277,6 +281,10 @@
               <option value="custom">Custom</option>
             </select>
           </div>
+          <p class="text-sm text-base-content/60">
+            The read-only preset matches the server's default read-only mode. For read-write,
+            set <code class="rounded bg-base-300 px-1">GITHUB_MCP_ENABLE_WRITES=true</code> in your host.
+          </p>
           <div id="permission-groups" class="space-y-6"></div>
         </div>
       </section>
@@ -303,7 +311,7 @@
           <ol class="list-decimal space-y-2 pl-4 text-base text-base-content/70">
             <li>Store it in a gitignored file at the project root, for example <code class="rounded bg-base-300 px-1">.secrets/github_pro_token</code>. Confirm <code class="rounded bg-base-300 px-1">.secrets/</code> is in <code class="rounded bg-base-300 px-1">.gitignore</code> before you paste the token.</li>
             <li>Restrict the file with <code class="rounded bg-base-300 px-1">chmod 600</code>.</li>
-            <li>Set <code class="rounded bg-base-300 px-1">GITHUB_PERSONAL_ACCESS_TOKEN</code> in your MCP host, or reference the file if your host supports file interpolation, then restart the host.</li>
+            <li>Set <code class="rounded bg-base-300 px-1">GITHUB_PERSONAL_ACCESS_TOKEN</code> in your MCP host, or reference the file if your host supports file interpolation. Add <code class="rounded bg-base-300 px-1">GITHUB_MCP_ENABLE_WRITES=true</code> if you need write tools. Restart the host.</li>
             <li>Verify with <code class="rounded bg-base-300 px-1">auth_get_current_login</code>.</li>
           </ol>
         </div>

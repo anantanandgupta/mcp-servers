@@ -13,7 +13,8 @@ distributed as npm packages and Docker images.
 
 Give Claude Code, Cursor, Copilot, opencode and any MCP host a complete GitHub
 toolkit: 34 tools for issues, pull requests, files, projects, labels and
-organizations.
+organizations. Read-only mode is the default with 19 tools; set
+`GITHUB_MCP_ENABLE_WRITES=true` to load all 34.
 
 - Triage issues, comment, label, close, reopen and manage sub-issues.
 - Review pull requests, inspect commits, create pull requests and merge them.
@@ -95,6 +96,7 @@ The server runs on your machine and calls GitHub directly with your token.
 
 - **Documentation:** https://mcp.anantanandgupta.net/
 - **GitHub Pro MCP guide:** [github-pro-mcp/README.md](./github-pro-mcp/README.md)
+- **Compare with the official server:** https://mcp.anantanandgupta.net/github-pro-mcp/compare/
 - **MailGlass guide:** [mailglass-email-mcp/README.md](./mailglass-email-mcp/README.md)
 - **npm:** https://www.npmjs.com/package/github-pro-mcp and https://www.npmjs.com/package/mailglass-email-mcp
 - **Docker:** https://hub.docker.com/r/anantanandgupta/github-pro-mcp and https://hub.docker.com/r/anantanandgupta/mailglass-email-mcp

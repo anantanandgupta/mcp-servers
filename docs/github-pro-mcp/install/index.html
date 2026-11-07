@@ -196,6 +196,10 @@
         </li>
         
         <li>
+          <a href="/github-pro-mcp/compare/" class="">Compare</a>
+        </li>
+        
+        <li>
           <a href="/github-pro-mcp/permissions/" class="">Permissions</a>
         </li>
         
@@ -216,7 +220,9 @@
   <h1 class="mt-2 text-4xl font-bold tracking-tight">Install <span class="title-accent">GitHub Pro MCP</span></h1>
   <p class="mt-4 text-base-content/70">
     The server runs locally and talks to the GitHub API with a personal access token you
-    create. Install it with npm or Docker, then point your MCP host at it.
+    create. Install it with npm or Docker, then point your MCP host at it. It starts in
+    read-only mode with 19 tools; set <code class="rounded bg-base-300 px-1">GITHUB_MCP_ENABLE_WRITES=true</code>
+    to load all 34.
   </p>
 
   <section class="mt-10 space-y-4">
@@ -262,6 +268,10 @@
     </div>
   </div>
 </div>
+    <p class="text-base-content/70">
+      Docker users pass the same variables with <code class="rounded bg-base-300 px-1">-e</code>, including
+      <code class="rounded bg-base-300 px-1">-e GITHUB_MCP_ENABLE_WRITES=true</code> when write tools are needed.
+    </p>
   </section>
 
   <section class="mt-10 space-y-4">
@@ -277,7 +287,7 @@
     <span class="code-title">opencode.jsonc</span>
   </div>
   <div class="code-body">
-    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div></div>
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div></div>
     <div class="code-scroll">
       <pre><code>{
   "mcp": {
@@ -286,7 +296,8 @@
         "type": "local",
         "command": ["npx", "-y", "github-pro-mcp"],
         "environment": {
-          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}",
+          "GITHUB_MCP_ENABLE_WRITES": "true"
         }
       }
     }
@@ -306,7 +317,7 @@
     <span class="code-title">claude_desktop_config.json</span>
   </div>
   <div class="code-body">
-    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div></div>
+    <div class="code-gutter" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div>
     <div class="code-scroll">
       <pre><code>{
   "mcpServers": {
@@ -314,7 +325,8 @@
       "command": "npx",
       "args": ["-y", "github-pro-mcp"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_..."
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "github_pat_...",
+        "GITHUB_MCP_ENABLE_WRITES": "true"
       }
     }
   }
@@ -327,6 +339,10 @@
     <p class="text-base-content/70">
       Add the same server block to the host's MCP settings. Use the <code class="rounded bg-base-300 px-1">npx</code>
       command for a zero-install setup, or point it at the global binary.
+    </p>
+    <p class="mt-2 text-sm text-base-content/60">
+      The examples above set <code class="rounded bg-base-300 px-1">GITHUB_MCP_ENABLE_WRITES=true</code>.
+      Remove it to stay read-only with 19 tools.
     </p>
   </section>
 
@@ -361,6 +377,11 @@
             <td><code>GITHUB_HOST</code></td>
             <td>No</td>
             <td>GitHub Enterprise Server API URL.</td>
+          </tr>
+          <tr>
+            <td><code>GITHUB_MCP_ENABLE_WRITES</code></td>
+            <td>No</td>
+            <td>Set to <code>true</code> to register the 15 write tools. Default is read-only with 19 tools.</td>
           </tr>
         </tbody>
       </table>

@@ -196,6 +196,10 @@
         </li>
         
         <li>
+          <a href="/github-pro-mcp/compare/" class="">Compare</a>
+        </li>
+        
+        <li>
           <a href="/github-pro-mcp/permissions/" class="menu-active">Permissions</a>
         </li>
         
@@ -216,7 +220,9 @@
   <h1 class="mt-2 text-4xl font-bold tracking-tight">Permissions and the <span class="title-accent">tools they unlock</span></h1>
   <p class="mt-4 max-w-2xl text-base-content/70">
     A fine-grained token only needs the permissions for the tools you plan to use. The token
-    generator applies one of two presets, or you can choose individual permissions.
+    generator applies one of two presets, or you can choose individual permissions. The
+    read-only preset pairs with the default read-only mode; the read-write preset requires
+    <code class="rounded bg-base-300 px-1">GITHUB_MCP_ENABLE_WRITES=true</code>.
   </p>
 
   <div class="mt-8 grid gap-4 md:grid-cols-2">
